@@ -5,46 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Founders | Operational Automation & Systems</title>
     <!-- Tailwind CSS CDN -->
-    <script>
-document.querySelector('form').addEventListener('submit', async (e) => {
-    e.preventDefault(); // Stop standard page reload
-    
-    const submitButton = e.target.querySelector('button[type="submit"]');
-    const originalButtonText = submitButton.textContent;
-    
-    // Optional: Change button text to show it's working
-    submitButton.textContent = "Processing...";
-    submitButton.disabled = true;
-    
-    const formData = new FormData(e.target);
-    const payload = Object.fromEntries(formData.entries());
-    
-    try {
-        const response = await fetch(e.target.action, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(payload)
-        });
-        
-        if (response.ok) {
-            // 🌟 The Popup Success Message
-            alert("System Optimization Initiated!\n\nOur automation engine has successfully parsed your operational data. We will analyze your stack friction and connect shortly.");
-            
-            // Clear the form fields so it's ready for another submission
-            e.target.reset();
-        } else {
-            alert("Systems are currently busy. Please try again shortly.");
-        }
-    } catch (error) {
-        console.error('Submission failed:', error);
-        alert("Connection error. Please check your internet and try again.");
-    } finally {
-        // Restore button state
-        submitButton.textContent = originalButtonText;
-        submitButton.disabled = false;
-    }
-});
-</script>
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
 <body class="bg-slate-950 text-slate-100 font-sans antialiased">
 
