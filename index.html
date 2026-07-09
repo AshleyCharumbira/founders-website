@@ -4,8 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Founders | Operational Automation & Systems</title>
+    <script src="https://unpkg.com/lucide@latest"></script>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- Animation for home page text  -->
+    <style>
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px); /* Increased slightly for a more dramatic, elegant glide */
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .animate-fade-up {
+            /* Changed from 0.8s to 1.4s for a much smoother, slower entry */
+            animation: fadeInUp 3.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            /* Optional: waits 0.2 seconds before starting so the user doesn't miss the beginning while loading */
+            animation-delay: 0.2s; 
+            opacity: 0; /* Keeps the text hidden until the animation-delay finishes */
+        }
+    </style>
 </head>
 <body class="bg-slate-950 text-slate-100 font-sans antialiased">
 
@@ -89,7 +111,7 @@
 
         <!-- Foreground Content Block -->
         <div class="max-w-4xl mx-auto px-6 relative z-10">
-            <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight text-white mb-6 leading-tight">
+           <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight text-white mb-6 leading-tight animate-fade-up">
                 The Automation Engine for <br>
                 <span class="bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-400 bg-clip-text text-transparent">Scaling Businesses</span>
             </h1>
@@ -108,22 +130,40 @@
     <section id="services" class="max-w-5xl mx-auto px-6 py-16">
         <div class="grid md:grid-cols-3 gap-8">
             <!-- Card 1 -->
-            <div class="bg-slate-900 border border-slate-800 p-8 rounded-2xl">
-                <div class="text-blue-400 text-2xl mb-4">⚙️</div>
+            <div class="bg-slate-900/60 backdrop-blur-sm border-t border-l border-slate-700/50 border-b border-r border-slate-900 p-8 rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.5)] shadow-slate-950/50 transition-all duration-300 hover:-translate-y-2 hover:bg-slate-900 hover:border-slate-700/80 hover:shadow-blue-950/30">
+                <i data-lucide="trending-up" class="w-6 h-6 text-blue-400 mb-4 block"></i>
                 <h3 class="text-lg font-bold text-white mb-2">Revenue & RevOps</h3>
                 <p class="text-sm text-slate-400 leading-relaxed">Lead enrichment, automated CRM pipelines, and post-meeting AI synthesis that keep sales teams selling.</p>
             </div>
             <!-- Card 2 -->
-            <div class="bg-slate-900 border border-slate-800 p-8 rounded-2xl">
-                <div class="text-indigo-400 text-2xl mb-4">📊</div>
+            <div class="bg-slate-900/60 backdrop-blur-sm border-t border-l border-slate-700/50 border-b border-r border-slate-900 p-8 rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.5)] shadow-slate-950/50 transition-all duration-300 hover:-translate-y-2 hover:bg-slate-900 hover:border-slate-700/80 hover:shadow-blue-950/30">
+                <i data-lucide="receipt" class="w-6 h-6 text-indigo-400 mb-4 block"></i>
                 <h3 class="text-lg font-bold text-white mb-2">Financial Automation</h3>
                 <p class="text-sm text-slate-400 leading-relaxed">End-to-end invoice generation, automated payment reconciliation, and ledger syncing with Xero and QuickBooks.</p>
             </div>
             <!-- Card 3 -->
-            <div class="bg-slate-900 border border-slate-800 p-8 rounded-2xl">
-                <div class="text-purple-400 text-2xl mb-4">⚡</div>
+            <div class="bg-slate-900/60 backdrop-blur-sm border-t border-l border-slate-700/50 border-b border-r border-slate-900 p-8 rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.5)] shadow-slate-950/50 transition-all duration-300 hover:-translate-y-2 hover:bg-slate-900 hover:border-slate-700/80 hover:shadow-blue-950/30">
+                <i data-lucide="cpu" class="w-6 h-6 text-purple-400 mb-4 block"></i>
                 <h3 class="text-lg font-bold text-white mb-2">Core Infrastructure</h3>
                 <p class="text-sm text-slate-400 leading-relaxed">Custom, self-hosted data routing engines built to connect your entire disparate software stack flawlessly.</p>
+            </div>
+            <!-- Card 4-->
+            <div class="bg-slate-900/60 backdrop-blur-sm border-t border-l border-slate-700/50 border-b border-r border-slate-900 p-8 rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.5)] shadow-slate-950/50 transition-all duration-300 hover:-translate-y-2 hover:bg-slate-900 hover:border-slate-700/80 hover:shadow-blue-950/30">
+                <i data-lucide="megaphone" class="w-6 h-6 text-blue-400 mb-4 block"></i>
+                <h3 class="text-lg font-bold text-white mb-2">Digital Marketing</h3>
+                <p class="text-sm text-slate-400 leading-relaxed">Stay relevant and continuously engaged with your clients on all social media platforms through automated posting and responding to customer engagement.</p>
+            </div>
+            <!-- Card 5 -->
+            <div class="bg-slate-900/60 backdrop-blur-sm border-t border-l border-slate-700/50 border-b border-r border-slate-900 p-8 rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.5)] shadow-slate-950/50 transition-all duration-300 hover:-translate-y-2 hover:bg-slate-900 hover:border-slate-700/80 hover:shadow-blue-950/30">
+                <i data-lucide="laptop" class="w-6 h-6 text-indigo-400 mb-4 block"></i>
+                <h3 class="text-lg font-bold text-white mb-2">Websites</h3>
+                <p class="text-sm text-slate-400 leading-relaxed">Get a custom website built at a reasonable cost to increase your business's online presence and promote customer engagement.</p>
+            </div>
+            <!-- Card 6-->
+            <div class="bg-slate-900/60 backdrop-blur-sm border-t border-l border-slate-700/50 border-b border-r border-slate-900 p-8 rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.5)] shadow-slate-950/50 transition-all duration-300 hover:-translate-y-2 hover:bg-slate-900 hover:border-slate-700/80 hover:shadow-blue-950/30">
+                <i data-lucide="user-check" class="w-6 h-6 text-purple-400 mb-4 block"></i>
+                <h3 class="text-lg font-bold text-white mb-2">Automated Onboarding</h3>
+                <p class="text-sm text-slate-400 leading-relaxed">Speed up client and employee onboarding by automating contract generation, and provisioning access to external client portals.</p>
             </div>
         </div>
     </section>
@@ -159,6 +199,10 @@
     <footer class="text-center py-8 text-xs text-slate-600 border-t border-slate-900 max-w-6xl mx-auto mt-12">
         &copy; 2026 Founders Echo. All rights reserved.
     </footer>
+
+    <script>
+      lucide.createIcons();
+    </script>
 
 </body>
 </html>
