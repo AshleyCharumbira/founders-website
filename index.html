@@ -5,38 +5,107 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Founders | Operational Automation & Systems</title>
     <!-- Tailwind CSS CDN -->
-<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
 <body class="bg-slate-950 text-slate-100 font-sans antialiased">
 
     <!-- Header / Navigation -->
     <header class="max-w-6xl mx-auto px-6 py-8 flex justify-between items-center">
+        <!-- Left: Logo -->
         <div class="text-xl font-bold tracking-tight bg-gradient-to-r from-blue-400 to-indigo-400 bg-clip-text text-transparent">
             FOUNDERS ECHO
         </div>
+
+        <!-- Center: Navigation Links (Hidden on mobile, flex on desktop) -->
+        <nav class="hidden md:flex items-center gap-8">
+            <a href="#about" class="text-sm font-semibold tracking-wider text-slate-400 hover:text-white transition duration-200">
+                ABOUT US
+            </a>
+            <a href="#services" class="text-sm font-semibold tracking-wider text-slate-400 hover:text-white transition duration-200">
+                SERVICES
+            </a>
+            <a href="#blueprints" class="text-sm font-semibold tracking-wider text-slate-400 hover:text-white transition duration-200">
+                DEMOS
+            </a>
+            <a href="#contact" class="text-sm font-semibold tracking-wider text-slate-400 hover:text-white transition duration-200">
+                CONTACT US
+            </a>
+        </nav>
+
+        <!-- Right: CTA Button -->
         <a href="#contact" class="bg-blue-600 hover:bg-blue-500 text-white text-sm font-medium px-4 py-2 rounded-lg transition">
-            Optimize Your Stack
+            Optimize Your Business
         </a>
     </header>
 
-    <!-- Hero Section -->
-    <section class="max-w-4xl mx-auto px-6 pt-20 pb-16 text-center">
-        <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight text-white mb-6">
-            The Automation Engine for <br>
-            <span class="bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-400 bg-clip-text text-transparent">Scaling Businesses</span>
-        </h1>
-        <p class="text-lg text-slate-400 max-w-2xl mx-auto mb-10">
-            We architect the internal systems, financial workflows, and data pipelines that eliminate manual operational friction. Stop working in your business, start scaling it.
-        </p>
-        <div class="flex justify-center gap-4">
-            <a href="#contact" class="bg-slate-100 hover:bg-white text-slate-950 font-medium px-6 py-3 rounded-xl transition">
-                Book a Systems Audit
-            </a>
+    <!-- Hero Section with Custom Fluid Wave Background -->
+    <section class="relative overflow-hidden bg-slate-950 pt-20 pb-24 text-center">
+        
+        <!-- Background Layer: Full-Width Blended Fluid Waves -->
+        <div class="absolute inset-0 w-full h-full pointer-events-none select-none z-0">
+            <svg class="w-full h-full" viewBox="0 0 1440 800" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+                <!-- Base Gradient covering the whole area to eliminate harsh lines -->
+                <rect width="1440" height="800" fill="url(#slate-base)"/>
+                
+                <!-- Large, smooth background curves flowing from the right -->
+                <path d="M1440 0H600C800 200 450 550 900 800H1440V0Z" fill="url(#indigo-deep)" opacity="0.4"/>
+                <path d="M1440 0H800C950 250 650 500 1050 800H1440V0Z" fill="url(#indigo-bright)" opacity="0.3"/>
+                <path d="M1440 0H950C1100 300 850 550 1200 800H1440V0Z" fill="url(#purple-glow)" opacity="0.15"/>
+
+                <!-- Definitions for smooth color gradients -->
+                <defs>
+                    <!-- Your core background slate -->
+                    <linearGradient id="slate-base" x1="0" y1="0" x2="1440" y2="0" gradientUnits="userSpaceOnUse">
+                        <stop offset="0%" stop-color="#020617"/>
+                        <stop offset="60%" stop-color="#020617"/>
+                        <stop offset="100%" stop-color="#0f172a"/>
+                    </linearGradient>
+                    
+                    <!-- Deep Indigo blending fade -->
+                    <linearGradient id="indigo-deep" x1="600" y1="400" x2="1440" y2="400" gradientUnits="userSpaceOnUse">
+                        <stop offset="0%" stop-color="#020617" stop-opacity="0"/>
+                        <stop offset="40%" stop-color="#1e1b4b" stop-opacity="0.6"/>
+                        <stop offset="100%" stop-color="#312e81"/>
+                    </linearGradient>
+
+                    <!-- Lighter Indigo/Blue accent wave -->
+                    <linearGradient id="indigo-bright" x1="700" y1="400" x2="1440" y2="400" gradientUnits="userSpaceOnUse">
+                        <stop offset="0%" stop-color="#020617" stop-opacity="0"/>
+                        <stop offset="50%" stop-color="#312e81" stop-opacity="0.5"/>
+                        <stop offset="100%" stop-color="#3b82f6" stop-opacity="0.4"/>
+                    </linearGradient>
+
+                    <!-- Soft purple glow edge -->
+                    <linearGradient id="purple-glow" x1="900" y1="400" x2="1440" y2="400" gradientUnits="userSpaceOnUse">
+                        <stop offset="0%" stop-color="#020617" stop-opacity="0"/>
+                        <stop offset="100%" stop-color="#c084fc"/>
+                    </linearGradient>
+                </defs>
+            </svg>
+        </div>
+
+        <!-- Optional Subtle Grid/Mesh Overlay to match the textured feel of the screenshot -->
+        <div class="absolute inset-0 bg-[linear-gradient(to_right,#1e293b10_1px,transparent_1px),linear-gradient(to_bottom,#1e293b10_1px,transparent_1px)] bg-[size:4rem_4rem] z-0"></div>
+
+        <!-- Foreground Content Block -->
+        <div class="max-w-4xl mx-auto px-6 relative z-10">
+            <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight text-white mb-6 leading-tight">
+                The Automation Engine for <br>
+                <span class="bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-400 bg-clip-text text-transparent">Scaling Businesses</span>
+            </h1>
+            <p class="text-lg text-slate-400 max-w-2xl mx-auto mb-10 leading-relaxed">
+                We architect the internal systems, financial workflows, and data pipelines that eliminate manual operational friction. Stop working in your business, start scaling it.
+            </p>
+            <div class="flex justify-center gap-4">
+                <a href="#contact" class="bg-slate-100 hover:bg-white text-slate-950 font-medium px-6 py-3 rounded-xl transition shadow-lg shadow-slate-950/40">
+                    Book a Systems Audit
+                </a>
+            </div>
         </div>
     </section>
 
     <!-- Core Services Grid -->
-    <section class="max-w-5xl mx-auto px-6 py-16">
+    <section id="services" class="max-w-5xl mx-auto px-6 py-16">
         <div class="grid md:grid-cols-3 gap-8">
             <!-- Card 1 -->
             <div class="bg-slate-900 border border-slate-800 p-8 rounded-2xl">
