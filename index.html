@@ -9,20 +9,25 @@
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <!-- Animation for home page text  -->
     <style>
-    @keyframes fadeInUp {
-        from {
-            opacity: 0;
-            transform: translateY(20px);
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px); /* Increased slightly for a more dramatic, elegant glide */
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
-        to {
-            opacity: 1;
-            transform: translateY(0);
+        
+        .animate-fade-up {
+            /* Changed from 0.8s to 1.4s for a much smoother, slower entry */
+            animation: fadeInUp 1.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            /* Optional: waits 0.2 seconds before starting so the user doesn't miss the beginning while loading */
+            animation-delay: 0.2s; 
+            opacity: 0; /* Keeps the text hidden until the animation-delay finishes */
         }
-    }
-    .animate-fade-up {
-        animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-    }
-</style>
+    </style>
 </head>
 <body class="bg-slate-950 text-slate-100 font-sans antialiased">
 
