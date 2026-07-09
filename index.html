@@ -33,22 +33,13 @@
 
 <header class="sticky top-0 left-0 right-0 z-50 max-w-full bg-slate-950/80 backdrop-blur-md border-b border-slate-900/50 px-6 py-4 transition duration-200">
     <style>
-        @keyframes waveOscillate {
-            0%, 100% {
-                transform: translateY(0) scaleY(1);
-                opacity: 0.7;
-                filter: drop-shadow(0 0 2px rgba(96, 165, 250, 0.2));
-            }
-            50% {
-                transform: translateY(-1px) scaleY(1.1);
-                opacity: 1;
-                filter: drop-shadow(0 0 8px rgba(96, 165, 250, 0.5));
-            }
+        @keyframes eqBounce {
+            0%, 100% { transform: scaleY(1); }
+            50% { transform: scaleY(1.25); filter: drop-shadow(0 0 4px rgba(96,165,250,0.3)); }
         }
-        .animate-wave {
-            animation: waveOscillate 3s ease-in-out infinite;
-        }
+        .animate-eq { animation: eqBounce 1.8s ease-in-out infinite; transform-origin: bottom; }
     </style>
+    <i data-lucide="audio-lines" class="w-4 h-4 block animate-eq"></i>
 
     <div class="max-w-6xl mx-auto flex justify-between items-center">
         
