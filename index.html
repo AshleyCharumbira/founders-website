@@ -38,24 +38,49 @@
         </a>
     </header>
 
-<!-- Hero Section with Custom Fluid Wave Background -->
+    <!-- Hero Section with Custom Fluid Wave Background -->
     <section class="relative overflow-hidden bg-slate-950 pt-20 pb-24 text-center">
         
-        <!-- Background Layer: The Multi-layered SVG Wave -->
+        <!-- Background Layer: Full-Width Blended Fluid Waves -->
         <div class="absolute inset-0 w-full h-full pointer-events-none select-none z-0">
-            <svg class="w-full h-full min-w-[1440px] absolute right-0 top-0 translate-x-1/4 md:translate-x-10 lg:translate-x-0" viewBox="0 0 1440 800" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMaxYMid slice">
-                <!-- Deep Base Wave (Slightly lighter than slate-950) -->
-                <path d="M1440 0H700C850 150 600 450 950 650C1100 730 1300 780 1440 800V0Z" fill="#0f172a" opacity="0.4"/>
+            <svg class="w-full h-full" viewBox="0 0 1440 800" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+                <!-- Base Gradient covering the whole area to eliminate harsh lines -->
+                <rect width="1440" height="800" fill="url(#slate-base)"/>
                 
-                <!-- Main Indigo Midtones Wave -->
-                <path d="M1440 0H850C980 180 750 400 1050 580C1180 660 1320 740 1440 760V0Z" fill="#1e1b4b" opacity="0.6"/>
-                
-                <!-- Vibrant Accent Core Line (Matches your indigo text gradient) -->
-                <path d="M1440 0H890C1010 190 790 390 1080 560C1200 630 1330 710 1440 730V0Z" fill="#312e81"/>
-                
-                <!-- Bright Electric Blue Neon Edge Highlight -->
-                <path d="M890 0C900 15 915 35 930 60C900 40 885 15 880 0H890Z" fill="#3b82f6" opacity="0.5"/>
-                <path d="M1030 150C1010 180 970 230 950 270C965 240 995 200 1025 160L1030 150Z" fill="#6366f1" opacity="0.4"/>
+                <!-- Large, smooth background curves flowing from the right -->
+                <path d="M1440 0H600C800 200 450 550 900 800H1440V0Z" fill="url(#indigo-deep)" opacity="0.4"/>
+                <path d="M1440 0H800C950 250 650 500 1050 800H1440V0Z" fill="url(#indigo-bright)" opacity="0.3"/>
+                <path d="M1440 0H950C1100 300 850 550 1200 800H1440V0Z" fill="url(#purple-glow)" opacity="0.15"/>
+
+                <!-- Definitions for smooth color gradients -->
+                <defs>
+                    <!-- Your core background slate -->
+                    <linearGradient id="slate-base" x1="0" y1="0" x2="1440" y2="0" gradientUnits="userSpaceOnUse">
+                        <stop offset="0%" stop-color="#020617"/>
+                        <stop offset="60%" stop-color="#020617"/>
+                        <stop offset="100%" stop-color="#0f172a"/>
+                    </linearGradient>
+                    
+                    <!-- Deep Indigo blending fade -->
+                    <linearGradient id="indigo-deep" x1="600" y1="400" x2="1440" y2="400" gradientUnits="userSpaceOnUse">
+                        <stop offset="0%" stop-color="#020617" stop-opacity="0"/>
+                        <stop offset="40%" stop-color="#1e1b4b" stop-opacity="0.6"/>
+                        <stop offset="100%" stop-color="#312e81"/>
+                    </linearGradient>
+
+                    <!-- Lighter Indigo/Blue accent wave -->
+                    <linearGradient id="indigo-bright" x1="700" y1="400" x2="1440" y2="400" gradientUnits="userSpaceOnUse">
+                        <stop offset="0%" stop-color="#020617" stop-opacity="0"/>
+                        <stop offset="50%" stop-color="#312e81" stop-opacity="0.5"/>
+                        <stop offset="100%" stop-color="#3b82f6" stop-opacity="0.4"/>
+                    </linearGradient>
+
+                    <!-- Soft purple glow edge -->
+                    <linearGradient id="purple-glow" x1="900" y1="400" x2="1440" y2="400" gradientUnits="userSpaceOnUse">
+                        <stop offset="0%" stop-color="#020617" stop-opacity="0"/>
+                        <stop offset="100%" stop-color="#c084fc"/>
+                    </linearGradient>
+                </defs>
             </svg>
         </div>
 
