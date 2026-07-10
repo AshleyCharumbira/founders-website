@@ -3,19 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/svg+xml" href="/favfile.svg">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=1">
     <title>Founders Echo | Business Process Automation</title>
     <meta name="google-site-verification" content="google8089a1d535fe19cc" />
 
     <script src="https://unpkg.com/lucide@latest"></script>
-    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <!-- Animation for home page text  -->
     <style>
         @keyframes fadeInUp {
             from {
                 opacity: 0;
-                transform: translateY(30px); /* Increased slightly for a more dramatic, elegant glide */
+                transform: translateY(30px);
             }
             to {
                 opacity: 1;
@@ -24,11 +22,15 @@
         }
         
         .animate-fade-up {
-            /* Changed from 0.8s to 1.4s for a much smoother, slower entry */
             animation: fadeInUp 3.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-            /* Optional: waits 0.2 seconds before starting so the user doesn't miss the beginning while loading */
             animation-delay: 0.2s; 
-            opacity: 0; /* Keeps the text hidden until the animation-delay finishes */
+            opacity: 0;
+        }
+
+        /* Prevent Lucide layout compression in Tailwind v4 runtimes */
+        svg.lucide {
+            display: inline-block !important;
+            vertical-align: middle;
         }
     </style>
 </head>
@@ -44,7 +46,7 @@
             50% {
                 transform: scaleY(1.3);
                 filter: drop-shadow(0 0 6px rgba(96, 165, 250, 0.5));
-                color: #818cf8; /* Smoothly transitions tint towards indigo mid-bounce */
+                color: #818cf8;
             }
         }
         .animate-eq {
@@ -53,77 +55,51 @@
     </style>
 
     <div class="max-w-6xl mx-auto flex justify-between items-center">
-        
         <a href="#" class="flex items-center gap-2 group cursor-pointer no-underline">
             <div class="text-blue-400 group-hover:text-blue-300 transition duration-300 flex items-center justify-center">
                 <i data-lucide="audio-lines" class="w-5 h-5 block animate-eq"></i>
             </div>
-            
             <div class="text-xl font-bold tracking-tight bg-gradient-to-r from-blue-400 to-indigo-400 bg-clip-text text-transparent">
                 FOUNDERS ECHO
             </div>
         </a>
 
         <nav class="hidden md:flex items-center gap-8">
-            <a href="#about" class="text-sm font-semibold tracking-wider text-slate-400 hover:text-white transition duration-200">
-                ABOUT US
-            </a>
-            <a href="#services" class="text-sm font-semibold tracking-wider text-slate-400 hover:text-white transition duration-200">
-                SERVICES
-            </a>
-            <a href="#blueprints" class="text-sm font-semibold tracking-wider text-slate-400 hover:text-white transition duration-200">
-                DEMOS
-            </a>
-            <a href="#contact" class="text-sm font-semibold tracking-wider text-slate-400 hover:text-white transition duration-200">
-                CONTACT US
-            </a>
+            <a href="#about" class="text-sm font-semibold tracking-wider text-slate-400 hover:text-white transition duration-200">ABOUT US</a>
+            <a href="#services" class="text-sm font-semibold tracking-wider text-slate-400 hover:text-white transition duration-200">SERVICES</a>
+            <a href="#blueprints" class="text-sm font-semibold tracking-wider text-slate-400 hover:text-white transition duration-200">DEMOS</a>
+            <a href="#contact" class="text-sm font-semibold tracking-wider text-slate-400 hover:text-white transition duration-200">CONTACT US</a>
         </nav>
 
         <a href="#contact" class="bg-blue-600 hover:bg-blue-500 text-white text-sm font-medium px-4 py-2 rounded-lg transition">
             Get Started
         </a>
-        
     </div>
 </header>
 
-    <!-- Hero Section with Custom Fluid Wave Background -->
     <section class="relative overflow-hidden bg-slate-950 pt-20 pb-24 text-center">
-        
-        <!-- Background Layer: Full-Width Blended Fluid Waves -->
         <div class="absolute inset-0 w-full h-full pointer-events-none select-none z-0">
             <svg class="w-full h-full" viewBox="0 0 1440 800" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-                <!-- Base Gradient covering the whole area to eliminate harsh lines -->
                 <rect width="1440" height="800" fill="url(#slate-base)"/>
-                
-                <!-- Large, smooth background curves flowing from the right -->
                 <path d="M1440 0H600C800 200 450 550 900 800H1440V0Z" fill="url(#indigo-deep)" opacity="0.4"/>
                 <path d="M1440 0H800C950 250 650 500 1050 800H1440V0Z" fill="url(#indigo-bright)" opacity="0.3"/>
                 <path d="M1440 0H950C1100 300 850 550 1200 800H1440V0Z" fill="url(#purple-glow)" opacity="0.15"/>
-
-                <!-- Definitions for smooth color gradients -->
                 <defs>
-                    <!-- Your core background slate -->
                     <linearGradient id="slate-base" x1="0" y1="0" x2="1440" y2="0" gradientUnits="userSpaceOnUse">
                         <stop offset="0%" stop-color="#020617"/>
                         <stop offset="60%" stop-color="#020617"/>
                         <stop offset="100%" stop-color="#0f172a"/>
                     </linearGradient>
-                    
-                    <!-- Deep Indigo blending fade -->
                     <linearGradient id="indigo-deep" x1="600" y1="400" x2="1440" y2="400" gradientUnits="userSpaceOnUse">
                         <stop offset="0%" stop-color="#020617" stop-opacity="0"/>
                         <stop offset="40%" stop-color="#1e1b4b" stop-opacity="0.6"/>
                         <stop offset="100%" stop-color="#312e81"/>
                     </linearGradient>
-
-                    <!-- Lighter Indigo/Blue accent wave -->
                     <linearGradient id="indigo-bright" x1="700" y1="400" x2="1440" y2="400" gradientUnits="userSpaceOnUse">
                         <stop offset="0%" stop-color="#020617" stop-opacity="0"/>
                         <stop offset="50%" stop-color="#312e81" stop-opacity="0.5"/>
                         <stop offset="100%" stop-color="#3b82f6" stop-opacity="0.4"/>
                     </linearGradient>
-
-                    <!-- Soft purple glow edge -->
                     <linearGradient id="purple-glow" x1="900" y1="400" x2="1440" y2="400" gradientUnits="userSpaceOnUse">
                         <stop offset="0%" stop-color="#020617" stop-opacity="0"/>
                         <stop offset="100%" stop-color="#c084fc"/>
@@ -131,11 +107,8 @@
                 </defs>
             </svg>
         </div>
-
-        <!-- Optional Subtle Grid/Mesh Overlay to match the textured feel of the screenshot -->
         <div class="absolute inset-0 bg-[linear-gradient(to_right,#1e293b10_1px,transparent_1px),linear-gradient(to_bottom,#1e293b10_1px,transparent_1px)] bg-[size:4rem_4rem] z-0"></div>
 
-        <!-- Foreground Content Block -->
         <div class="max-w-4xl mx-auto px-6 relative z-10">
            <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight text-white mb-6 leading-tight animate-fade-up">
                 The Automation Engine for <br>
@@ -152,121 +125,80 @@
         </div>
     </section>
 
-    <!-- Core Services Grid -->
     <section id="services" class="max-w-5xl mx-auto px-6 py-16">
         <div class="grid md:grid-cols-3 gap-8">
-            <!-- Card 1 -->
-            <div class="bg-slate-900/60 backdrop-blur-sm border-t border-l border-slate-700/50 border-b border-r border-slate-900 p-8 rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.5)] shadow-slate-950/50 transition-all duration-300 hover:-translate-y-2 hover:bg-slate-900 hover:border-slate-700/80 hover:shadow-blue-950/30">
+            <div class="bg-slate-900/60 backdrop-blur-sm border-t border-l border-slate-700/50 border-b border-r border-slate-900 p-8 rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.5)] transition-all duration-300 hover:-translate-y-2 hover:bg-slate-900 hover:border-slate-700/80">
                 <i data-lucide="trending-up" class="w-6 h-6 text-blue-400 mb-4 block"></i>
                 <h3 class="text-lg font-bold text-white mb-2">Revenue & RevOps</h3>
                 <p class="text-sm text-slate-400 leading-relaxed">Lead enrichment, automated CRM pipelines, and post-meeting AI synthesis that keep sales teams selling.</p>
             </div>
-            <!-- Card 2 -->
-            <div class="bg-slate-900/60 backdrop-blur-sm border-t border-l border-slate-700/50 border-b border-r border-slate-900 p-8 rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.5)] shadow-slate-950/50 transition-all duration-300 hover:-translate-y-2 hover:bg-slate-900 hover:border-slate-700/80 hover:shadow-blue-950/30">
+            <div class="bg-slate-900/60 backdrop-blur-sm border-t border-l border-slate-700/50 border-b border-r border-slate-900 p-8 rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.5)] transition-all duration-300 hover:-translate-y-2 hover:bg-slate-900 hover:border-slate-700/80">
                 <i data-lucide="receipt" class="w-6 h-6 text-indigo-400 mb-4 block"></i>
                 <h3 class="text-lg font-bold text-white mb-2">Financial Automation</h3>
                 <p class="text-sm text-slate-400 leading-relaxed">End-to-end invoice generation, automated payment reconciliation, and ledger syncing with Xero and QuickBooks.</p>
             </div>
-            <!-- Card 3 -->
-            <div class="bg-slate-900/60 backdrop-blur-sm border-t border-l border-slate-700/50 border-b border-r border-slate-900 p-8 rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.5)] shadow-slate-950/50 transition-all duration-300 hover:-translate-y-2 hover:bg-slate-900 hover:border-slate-700/80 hover:shadow-blue-950/30">
+            <div class="bg-slate-900/60 backdrop-blur-sm border-t border-l border-slate-700/50 border-b border-r border-slate-900 p-8 rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.5)] transition-all duration-300 hover:-translate-y-2 hover:bg-slate-900 hover:border-slate-700/80">
                 <i data-lucide="cpu" class="w-6 h-6 text-purple-400 mb-4 block"></i>
                 <h3 class="text-lg font-bold text-white mb-2">Core Infrastructure</h3>
                 <p class="text-sm text-slate-400 leading-relaxed">Custom, self-hosted data routing engines built to connect your entire disparate software stack flawlessly.</p>
             </div>
-            <!-- Card 4-->
-            <div class="bg-slate-900/60 backdrop-blur-sm border-t border-l border-slate-700/50 border-b border-r border-slate-900 p-8 rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.5)] shadow-slate-950/50 transition-all duration-300 hover:-translate-y-2 hover:bg-slate-900 hover:border-slate-700/80 hover:shadow-blue-950/30">
+            <div class="bg-slate-900/60 backdrop-blur-sm border-t border-l border-slate-700/50 border-b border-r border-slate-900 p-8 rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.5)] transition-all duration-300 hover:-translate-y-2 hover:bg-slate-900 hover:border-slate-700/80">
                 <i data-lucide="megaphone" class="w-6 h-6 text-blue-400 mb-4 block"></i>
                 <h3 class="text-lg font-bold text-white mb-2">Digital Marketing</h3>
-                <p class="text-sm text-slate-400 leading-relaxed">Stay relevant and continuously engaged with your clients on all social media platforms through automated posting and responding to customer engagement.</p>
+                <p class="text-sm text-slate-400 leading-relaxed">Stay relevant and continuously engaged with your clients on all social media platforms through automated posting.</p>
             </div>
-            <!-- Card 5 -->
-            <div class="bg-slate-900/60 backdrop-blur-sm border-t border-l border-slate-700/50 border-b border-r border-slate-900 p-8 rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.5)] shadow-slate-950/50 transition-all duration-300 hover:-translate-y-2 hover:bg-slate-900 hover:border-slate-700/80 hover:shadow-blue-950/30">
+            <div class="bg-slate-900/60 backdrop-blur-sm border-t border-l border-slate-700/50 border-b border-r border-slate-900 p-8 rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.5)] transition-all duration-300 hover:-translate-y-2 hover:bg-slate-900 hover:border-slate-700/80">
                 <i data-lucide="laptop" class="w-6 h-6 text-indigo-400 mb-4 block"></i>
                 <h3 class="text-lg font-bold text-white mb-2">Websites</h3>
-                <p class="text-sm text-slate-400 leading-relaxed">Get a custom website built at a reasonable cost to increase your business's online presence and promote customer engagement.</p>
+                <p class="text-sm text-slate-400 leading-relaxed">Get a custom website built at a reasonable cost to increase your business's online presence.</p>
             </div>
-            <!-- Card 6-->
-            <div class="bg-slate-900/60 backdrop-blur-sm border-t border-l border-slate-700/50 border-b border-r border-slate-900 p-8 rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.5)] shadow-slate-950/50 transition-all duration-300 hover:-translate-y-2 hover:bg-slate-900 hover:border-slate-700/80 hover:shadow-blue-950/30">
+            <div class="bg-slate-900/60 backdrop-blur-sm border-t border-l border-slate-700/50 border-b border-r border-slate-900 p-8 rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.5)] transition-all duration-300 hover:-translate-y-2 hover:bg-slate-900 hover:border-slate-700/80">
                 <i data-lucide="user-check" class="w-6 h-6 text-purple-400 mb-4 block"></i>
                 <h3 class="text-lg font-bold text-white mb-2">Automated Onboarding</h3>
-                <p class="text-sm text-slate-400 leading-relaxed">Speed up client and employee onboarding by automating contract generation, and provisioning access to external client portals.</p>
+                <p class="text-sm text-slate-400 leading-relaxed">Speed up client and employee onboarding by automating contract generation.</p>
             </div>
         </div>
     </section>
 
-    <!-- Benefits / About Section -->
     <section id="about" class="max-w-5xl mx-auto px-6 py-20 border-t border-slate-900">
         <div class="grid md:grid-cols-12 gap-12 items-center">
-            
-            <!-- Left Side: Copy (Occupies 7 columns on desktop) -->
             <div class="md:col-span-7 space-y-6">
-                <div class="text-xs font-semibold tracking-widest text-blue-400 uppercase">
-                    Why Automate?
-                </div>
+                <div class="text-xs font-semibold tracking-widest text-blue-400 uppercase">Why Automate?</div>
                 <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-white leading-tight">
                     Build a Business That Operates <br>
                     <span class="bg-gradient-to-r from-blue-400 to-indigo-400 bg-clip-text text-transparent">Independent of Your Time</span>
                 </h2>
                 <div class="space-y-4 text-slate-400 text-sm sm:text-base leading-relaxed">
-                    <p>
-                        In a growing company, manual overhead is the silent killer of velocity. Spending critical hours cross-referencing ledgers, copy-pasting customer details across software silos, and tracking client delivery tasks manually acts as an operational tax on expansion.
-                    </p>
-                    <p>
-                        By architecting end-to-end process automation, you transform fragmented, repetitive actions into unified digital workflows. Systems run flawlessly around the clock, human error drops to near zero, and your team is freed from administrative friction to focus strictly on higher-leverage strategy and customer acquisition.
-                    </p>
+                    <p>In a growing company, manual overhead is the silent killer of velocity. Spending critical hours cross-referencing ledgers, copy-pasting customer details across software silos, and tracking client delivery tasks manually acts as an operational tax on expansion.</p>
+                    <p>By architecting end-to-end process automation, you transform fragmented, repetitive actions into unified digital workflows. Systems run flawlessly around the clock, human error drops to near zero.</p>
                 </div>
-                
-                <!-- Quick Bullet Highlights for scannability -->
                 <div class="grid grid-cols-2 gap-4 pt-4">
-                    <div class="flex items-center gap-2 text-sm text-slate-200">
-                        <span class="text-blue-400">✓</span> 100% Data Accuracy
-                    </div>
-                    <div class="flex items-center gap-2 text-sm text-slate-200">
-                        <span class="text-blue-400">✓</span> Instant Lead Processing
-                    </div>
-                    <div class="flex items-center gap-2 text-sm text-slate-200">
-                        <span class="text-indigo-400">✓</span> Flawless Ledger Sync
-                    </div>
-                    <div class="flex items-center gap-2 text-sm text-slate-200">
-                        <span class="text-indigo-400">✓</span> Scalable Operations
-                    </div>
+                    <div class="flex items-center gap-2 text-sm text-slate-200"><span class="text-blue-400">✓</span> 100% Data Accuracy</div>
+                    <div class="flex items-center gap-2 text-sm text-slate-200"><span class="text-blue-400">✓</span> Instant Lead Processing</div>
+                    <div class="flex items-center gap-2 text-sm text-slate-200"><span class="text-indigo-400">✓</span> Flawless Ledger Sync</div>
+                    <div class="flex items-center gap-2 text-sm text-slate-200"><span class="text-indigo-400">✓</span> Scalable Operations</div>
                 </div>
             </div>
 
-            <!-- Right Side: Downloaded Image (Occupies 5 columns on desktop) -->
             <div class="md:col-span-5 relative flex justify-center">
-                <!-- Subtle 3D background glowing container for the image -->
                 <div class="absolute inset-0 bg-gradient-to-tr from-blue-500/10 to-indigo-500/5 rounded-3xl blur-2xl -z-10"></div>
-                
-                <!-- 3D Beveled Card border matching your service cards -->
-                <div class="bg-slate-900/40 p-3 rounded-2xl border-t border-l border-slate-700/30 border-b border-r border-slate-950 shadow-2xl shadow-slate-950/60 overflow-hidden w-full max-w-[400px]">
+                <div class="bg-slate-900/40 p-3 rounded-2xl border-t border-l border-slate-700/30 border-b border-r border-slate-950 shadow-2xl overflow-hidden w-full max-w-[400px]">
                     <img src="website_image_homepage.png" alt="Process Automation Visual" class="w-full h-auto rounded-xl object-cover grayscale-[20%] hover:grayscale-0 transition duration-300">
                 </div>
             </div>
-
         </div>
     </section>
 
-<!-- Contact Form Section -->
     <section id="contact" class="max-w-5xl mx-auto px-6 py-20 border-t border-slate-900 relative">
-        
-        <!-- Section Header matching the About layout rhythm -->
         <div class="max-w-md mx-auto mb-10 text-center space-y-3">
-            <div class="text-xs font-semibold tracking-widest text-blue-400 uppercase">
-                Get Started
-            </div>
-            <h2 class="scroll-trigger text-3xl font-extrabold tracking-tight text-white opacity-0">
-                Book a Consultation
-            </h2>
+            <div class="text-xs font-semibold tracking-widest text-blue-400 uppercase">Get Started</div>
+            <h2 class="text-3xl font-extrabold tracking-tight text-white">Book a Consultation</h2>
         </div>
 
-        <!-- Intake Form Box Card -->
         <div class="max-w-md mx-auto bg-slate-900 border border-slate-800 p-8 rounded-2xl shadow-xl">
-            <!-- Modified this line slightly to flow better under the new primary section header -->
             <h3 class="text-xl font-bold text-white mb-2 text-center">Let's Automate Your Ops</h3>
             <p class="text-sm text-slate-400 text-center mb-6">Drop your details below. Our automation engine will parse your request and reach out instantly.</p>
             
-            <!-- REMOVED action/method from form tags to control it via JavaScript instead -->
             <form id="intake-form" class="space-y-4">
                 <div>
                     <label class="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2" for="name">Name</label>
@@ -286,12 +218,9 @@
             </form>
         </div>
 
-        <!-- 3D Success Popup Modal (Hidden by default using 'hidden') -->
         <div id="success-modal" class="hidden fixed inset-0 bg-slate-950/80 backdrop-blur-sm flex items-center justify-center z-50 px-4">
-            <div class="bg-slate-900 border-t border-l border-slate-700/40 border-b border-r border-slate-950 p-8 rounded-2xl max-w-sm w-full text-center shadow-[0_20px_50px_rgba(0,0,0,0.6)] animate-fade-up">
-                <div class="w-12 h-12 bg-blue-500/10 text-blue-400 rounded-full flex items-center justify-center mx-auto mb-4 text-xl">
-                    ✓
-                </div>
+            <div class="bg-slate-900 border border-slate-800 p-8 rounded-2xl max-w-sm w-full text-center shadow-[0_20px_50px_rgba(0,0,0,0.6)] animate-fade-up">
+                <div class="w-12 h-12 bg-blue-500/10 text-blue-400 rounded-full flex items-center justify-center mx-auto mb-4 text-xl">✓</div>
                 <h3 class="text-xl font-bold text-white mb-2">Request Submitted!</h3>
                 <p class="text-sm text-slate-400 mb-6">Our automation team will reach out to you shortly.</p>
                 <button id="close-modal" class="w-full bg-slate-100 hover:bg-white text-slate-950 font-semibold py-2.5 rounded-xl transition text-sm cursor-pointer">
@@ -301,46 +230,54 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="text-center py-8 text-xs text-slate-600 border-t border-slate-900 max-w-6xl mx-auto mt-12">
         &copy; 2026 Founders Echo. All rights reserved.
     </footer>
 
     <script>
-      lucide.createIcons();
+      window.addEventListener('DOMContentLoaded', () => {
+          lucide.createIcons();
+      });
     </script>
 
     <script>
     const form = document.getElementById('intake-form');
-    const modal = document.getElementById('success-modal');
+    const successModal = document.getElementById('success-modal');
     const closeModalBtn = document.getElementById('close-modal');
 
     form.addEventListener('submit', async (e) => {
-        e.preventDefault(); // Stops the browser from redirecting pages
+        e.preventDefault();
+        
+        const formData = {
+            name: document.getElementById('name').value,
+            email: document.getElementById('email').value,
+            message: document.getElementById('message').value
+        };
 
-        // Gather all the form data inputs
-        const formData = new FormData(form);
+        const webhookUrl = 'https://n8n.foundersecho.com/webhook-test/founders-intake';
 
         try {
-            // Background submit to your n8n pipeline webhook url
-            await fetch('https://n8n.foundersecho.com/webhook/founders-intake', {
+            const response = await fetch(webhookUrl, {
                 method: 'POST',
-                body: formData
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(formData)
             });
+
+            if (response.ok) {
+                form.reset();
+                successModal.classList.remove('hidden');
+            } else {
+                alert('Something went wrong. Please check your network connection.');
+            }
         } catch (error) {
-            console.error('Submission handled silently:', error);
+            console.error('Submission Error:', error);
+            alert('Could not connect to the automation webhook backend.');
         }
-
-        // Show the success popup modal, clear the text fields
-        modal.classList.remove('hidden');
-        form.reset();
     });
 
-    // Hide the popup modal when clicking the 'Okay' button
     closeModalBtn.addEventListener('click', () => {
-        modal.classList.add('hidden');
+        successModal.classList.add('hidden');
     });
-</script>
-
+    </script>
 </body>
 </html>
