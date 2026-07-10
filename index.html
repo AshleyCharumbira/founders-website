@@ -311,36 +311,39 @@
     </script>
 
     <script>
-    const form = document.getElementById('intake-form');
-    const modal = document.getElementById('success-modal');
-    const closeModalBtn = document.getElementById('close-modal');
+    document.getElementById('contact-form').addEventListener('submit', async (e) => {
+        e.preventDefault();
+        
+        // Package form input data
+        const formData = {
+            name: document.getElementById('form-name').value,
+            email: document.getElementById('form-email').value,
+            message: document.getElementById('form-message').value
+        };
 
-    form.addEventListener('submit', async (e) => {
-        e.preventDefault(); // Stops the browser from redirecting pages
-
-        // Gather all the form data inputs
-        const formData = new FormData(form);
+        // Paste your n8n Test URL here temporarily for debugging
+        const webhookUrl = 'https://n8n.foundersecho.com/webhook/founders-intake';
 
         try {
-            // Background submit to your n8n pipeline webhook url
-            await fetch('https://n8n.foundersecho.com/webhook/founders-intake', {
+            const response = await fetch(webhookUrl, {
                 method: 'POST',
-                body: formData
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(formData)
             });
+
+            if (response.ok) {
+                alert('Message sent successfully!');
+                document.getElementById('contact-form').reset();
+            } else {
+                alert('Something went wrong. Please try again.');
+            }
         } catch (error) {
-            console.error('Submission handled silently:', error);
+            console.error('Submission Error:', error);
+            alert('Could not connect to the automation server.');
         }
-
-        // Show the success popup modal, clear the text fields
-        modal.classList.remove('hidden');
-        form.reset();
     });
+    </script>
 
-    // Hide the popup modal when clicking the 'Okay' button
-    closeModalBtn.addEventListener('click', () => {
-        modal.classList.add('hidden');
-    });
-</script>
 
 </body>
 </html>
