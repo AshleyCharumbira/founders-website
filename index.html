@@ -55,15 +55,22 @@
     </style>
 
     <div class="max-w-6xl mx-auto flex justify-between items-center">
-        <a href="#" class="flex items-center gap-2 group cursor-pointer no-underline">
-            <div class="text-blue-400 group-hover:text-blue-300 transition duration-300 flex items-center justify-center">
-                <i data-lucide="audio-lines" class="w-5 h-5 block animate-eq"></i>
-            </div>
-            <div class="text-xl font-bold tracking-tight bg-gradient-to-r from-blue-400 to-indigo-400 bg-clip-text text-transparent">
-                FOUNDERS ECHO
-            </div>
-        </a>
 
+        <a href="#" class="flex items-center gap-3 group cursor-pointer no-underline">
+            <!-- Pulsing Soundwave Logo -->
+            <div class="flex items-end gap-1 h-6 w-8 justify-center">
+                <span class="w-1 bg-blue-500 rounded-full animate-pulse" style="animation-duration: 0.8s; height: 40%;"></span>
+                <span class="w-1 bg-indigo-500 rounded-full animate-pulse" style="animation-duration: 1.1s; height: 100%;"></span>
+                <span class="w-1 bg-purple-500 rounded-full animate-pulse" style="animation-duration: 0.9s; height: 60%;"></span>
+                <span class="w-1 bg-blue-400 rounded-full animate-pulse" style="animation-duration: 1.3s; height: 80%;"></span>
+                <span class="w-1 bg-indigo-400 rounded-full animate-pulse" style="animation-duration: 0.7s; height: 30%;"></span>
+            </div>
+            
+            <!-- Static Premium Blue Brand Name (Matched with Footer) -->
+            <span class="text-xl font-bold text-blue-400 group-hover:text-blue-300 transition-colors duration-300 tracking-tight">
+                FOUNDERS ECHO
+            </span>
+        </a>
         <nav class="hidden md:flex items-center gap-8">
             <a href="#about" class="text-sm font-semibold tracking-wider text-slate-400 hover:text-white transition duration-200">ABOUT US</a>
             <a href="#services" class="text-sm font-semibold tracking-wider text-slate-400 hover:text-white transition duration-200">SERVICES</a>
@@ -248,7 +255,7 @@
                     </div>
                     <!-- Changed from 'text-white group-hover:text-blue-400' to a static 'text-blue-400' -->
                     <span class="text-xl font-bold text-blue-400 tracking-tight">
-                        FoundersEcho
+                        FOUNDERS ECHO
                     </span>
                 </a>
                 <p class="text-sm text-slate-500 max-w-xs leading-relaxed mt-2">
