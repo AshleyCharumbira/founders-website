@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Favicon link copied from index.html -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=1">
+    <title>Services | Founders Echo</title>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body class="bg-slate-950 text-slate-300 font-sans antialiased min-h-screen">
+
+    <!-- Identical Animated Brand Header -->
+    <header class="sticky top-0 left-0 right-0 z-50 max-w-full bg-slate-950/80 backdrop-blur-md border-b border-slate-900/50 px-6 py-4 transition duration-200">
+        <style>
+            @keyframes eqBounce {
+                0%, 100% {
+                    transform: scaleY(1);
+                    filter: drop-shadow(0 0 2px rgba(96, 165, 250, 0.2));
+                }
+                50% {
+                    transform: scaleY(1.3);
+                    filter: drop-shadow(0 0 6px rgba(96, 165, 250, 0.5));
+                    color: #818cf8;
+                }
+            }
+            .animate-eq {
+                animation: eqBounce 1.6s ease-in-out infinite;
+            }
+        </style>
+
+        <div class="max-w-6xl mx-auto flex justify-between items-center">
+
+            <a href="index.html" class="flex items-center gap-3 group cursor-pointer no-underline">
+                <!-- Pulsing Soundwave Logo -->
+                <div class="flex items-end gap-1 h-6 w-8 justify-center">
+                    <span class="w-1 bg-blue-500 rounded-full animate-pulse" style="animation-duration: 0.8s; height: 40%;"></span>
+                    <span class="w-1 bg-indigo-500 rounded-full animate-pulse" style="animation-duration: 1.1s; height: 100%;"></span>
+                    <span class="w-1 bg-purple-500 rounded-full animate-pulse" style="animation-duration: 0.9s; height: 60%;"></span>
+                    <span class="w-1 bg-blue-400 rounded-full animate-pulse" style="animation-duration: 1.3s; height: 80%;"></span>
+                    <span class="w-1 bg-indigo-400 rounded-full animate-pulse" style="animation-duration: 0.7s; height: 30%;"></span>
+                </div>
+                
+                <!-- Static Premium Blue Brand Name -->
+                <span class="text-xl font-bold text-blue-400 group-hover:text-blue-300 transition-colors duration-300 tracking-tight">
+                    FOUNDERS ECHO
+                </span>
+            </a>
+            <nav class="hidden md:flex items-center gap-8">
+                <a href="index.html#about" class="text-sm font-semibold tracking-wider text-slate-400 hover:text-white transition duration-200">ABOUT US</a>
+                <!-- Active SERVICES state -->
+                <a href="services.html" class="text-sm font-semibold tracking-wider text-white border-b-2 border-blue-400 pb-1 transition duration-200">SERVICES</a>
+                <a href="index.html#blueprints" class="text-sm font-semibold tracking-wider text-slate-400 hover:text-white transition duration-200">DEMOS</a>
+                <a href="index.html#contact" class="text-sm font-semibold tracking-wider text-slate-400 hover:text-white transition duration-200">CONTACT US</a>
+            </nav>
+
+            <a href="index.html#contact" class="bg-blue-600 hover:bg-blue-500 text-white text-sm font-medium px-4 py-2 rounded-lg transition">
+                Get Started
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="max-w-5xl mx-auto px-6 pt-16 pb-12 text-center space-y-4">
+        <div class="text-xs font-semibold tracking-widest text-blue-400 uppercase">Automated Systems Architecture</div>
+        <h1 class="text-4xl sm:text-5xl font-extrabold text-white tracking-tight">
+            Tailored Automation Solutions
+        </h1>
+        <p class="text-slate-400 max-w-2xl mx-auto text-base sm:text-lg">
+            Explore our specialized workflows engineered to eliminate operational bottlenecks, reduce error, and scale your operations without increasing headcount.
+        </p>
+    </section>
+
+    <!-- Service #1: Financial Process Automation -->
+    <section id="financial-automation" class="max-w-6xl mx-auto px-6 py-12">
+        <div class="bg-slate-900/50 border border-slate-800 rounded-3xl p-8 sm:p-12 space-y-12 shadow-2xl">
+            
+            <!-- Section Header -->
+            <div class="max-w-3xl space-y-3">
+                <span class="px-3 py-1 bg-blue-500/10 text-blue-400 border border-blue-500/20 rounded-full text-xs font-semibold uppercase tracking-wider">
+                    Core Capability
+                </span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Financial Process Automation</h2>
+                <p class="text-slate-400 leading-relaxed text-base">
+                    Manual ledger entries, invoice tracking, and payment reconciliations cost modern companies hundreds of lost hours every quarter. We design automated, multi-app financial pipelines that sync your accounting software, CRMs, and payment gateways in real time.
+                </p>
+            </div>
+
+            <!-- Video & Key Benefits Grid -->
+            <div class="grid lg:grid-cols-12 gap-8 items-center">
+            
+                <!-- Video Player Container (YouTube Embed) -->
+                <div class="lg:col-span-7 relative bg-slate-950 border border-slate-800 rounded-2xl overflow-hidden shadow-xl aspect-video">
+                    <iframe 
+                        class="w-full h-full"
+                        src="https://www.youtube.com/embed/kISC7403tVY" 
+                        title="Financial Process Automation Overview" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                        referrerpolicy="strict-origin-when-cross-origin" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                <!-- Benefits List -->
+                <div class="lg:col-span-5 space-y-6">
+                    <h3 class="text-xl font-bold text-white">What You Gain</h3>
+                    
+                    <ul class="space-y-4 text-sm text-slate-300">
+                        <li class="flex items-start gap-3">
+                            <span class="text-blue-400 font-bold">✓</span>
+                            <div>
+                                <strong class="text-white block">Instant Reconciliation</strong>
+                                Automatically cross-reference payments received across payment gateways into your ledgers without human intervention.
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-blue-400 font-bold">✓</span>
+                            <div>
+                                <strong class="text-white block">Automated Invoicing & Reminders</strong>
+                                Trigger instant invoice generation on deal signatures and schedule multi-channel payment follow-ups automatically.
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-blue-400 font-bold">✓</span>
+                            <div>
+                                <strong class="text-white block">Zero Administrative Error</strong>
+                                Standardize data parsing across receipts, contracts, and software silos with 100% computational precision.
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <!-- Pipeline Steps -->
+            <div class="border-t border-slate-800/80 pt-8 space-y-6">
+                <h3 class="text-lg font-bold text-white">How The Pipeline Works</h3>
+                <div class="grid sm:grid-cols-3 gap-6">
+                    <div class="bg-slate-950/60 p-5 rounded-xl border border-slate-800/60">
+                        <div class="text-xs font-semibold text-blue-400 mb-1">STEP 01</div>
+                        <h4 class="font-bold text-white mb-2">Data Capture</h4>
+                        <p class="text-xs text-slate-400 leading-relaxed">Invoices, CRM deals, or payment events trigger Webhooks instantly upon status changes.</p>
+                    </div>
+                    <div class="bg-slate-950/60 p-5 rounded-xl border border-slate-800/60">
+                        <div class="text-xs font-semibold text-blue-400 mb-1">STEP 02</div>
+                        <h4 class="font-bold text-white mb-2">Automated Processing</h4>
+                        <p class="text-xs text-slate-400 leading-relaxed">Data is validated, structured, and routed via secure automated cloud workflows.</p>
+                    </div>
+                    <div class="bg-slate-950/60 p-5 rounded-xl border border-slate-800/60">
+                        <div class="text-xs font-semibold text-blue-400 mb-1">STEP 03</div>
+                        <h4 class="font-bold text-white mb-2">Ledger Sync</h4>
+                        <p class="text-xs text-slate-400 leading-relaxed">Books update automatically, updating financial dashboards and notifying key team members.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+</body>
+</html>
