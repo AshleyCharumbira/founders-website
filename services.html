@@ -90,14 +90,18 @@
 
             <!-- Video & Key Benefits Grid -->
             <div class="grid lg:grid-cols-12 gap-8 items-center">
-                
-                <!-- Video Player Container -->
-                <div class="lg:col-span-7 relative bg-slate-950 border border-slate-800 rounded-2xl overflow-hidden shadow-xl aspect-video flex items-center justify-center">
-                    <!-- Update filename to match your downloaded HeyGen video -->
-                    <video class="w-full h-full object-cover" controls>
-                        <source src="https://youtu.be/kISC7403tVY" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
+            
+                <!-- Video Player Container (YouTube Embed) -->
+                <div class="lg:col-span-7 relative bg-slate-950 border border-slate-800 rounded-2xl overflow-hidden shadow-xl aspect-video">
+                    <iframe 
+                        class="w-full h-full"
+                        src="https://youtu.be/kISC7403tVY" 
+                        title="Financial Process Automation Overview" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                        referrerpolicy="strict-origin-when-cross-origin" 
+                        allowfullscreen>
+                    </iframe>
                 </div>
 
                 <!-- Benefits List -->
