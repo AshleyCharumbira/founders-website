@@ -1,1 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Founders Echo</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body class="bg-slate-950 text-slate-100 font-sans min-h-screen flex flex-col justify-between">
 
+    <!-- Header Navigation -->
+    <header class="sticky top-0 z-50 bg-slate-950/80 backdrop-blur-md border-b border-slate-800">
+        <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-2 text-white font-extrabold text-lg">
+                Founders Echo
+            </a>
+            <nav class="flex items-center gap-6 text-sm">
+                <a href="index.html" class="text-slate-300 hover:text-white transition-colors font-medium">Home</a>
+                <a href="services.html" class="text-slate-300 hover:text-white transition-colors font-medium">Services</a>
+                <a href="contact.html" class="text-blue-400 font-semibold">Contact Us</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Contact Section -->
+    <main class="max-w-6xl mx-auto px-6 py-16 flex-grow flex items-center w-full">
+        <div class="grid lg:grid-cols-12 gap-12 items-start w-full">
+            
+            <!-- Left Column: Contact Details & Location -->
+            <div class="lg:col-span-5 space-y-10">
+                <div>
+                    <span class="px-3 py-1 bg-blue-500/10 text-blue-400 border border-blue-500/20 rounded-full text-xs font-semibold uppercase tracking-wider">
+                        Get In Touch
+                    </span>
+                    <h1 class="text-4xl font-extrabold text-white mt-4">Let's Work Together</h1>
+                    <p class="text-slate-400 mt-2 text-sm leading-relaxed">
+                        Ready to automate your operations or have questions about our services? Reach out to our team today.
+                    </p>
+                </div>
+
+                <div class="space-y-8 border-t border-slate-800/80 pt-8">
+                    <!-- Our Location -->
+                    <div class="space-y-2">
+                        <h3 class="text-xs font-bold text-slate-400 uppercase tracking-widest">OUR LOCATION</h3>
+                        <p class="text-white font-bold leading-snug">
+                            Venture Workspace, Somerset West
+                        </p>
+                        <p class="text-slate-300 text-sm leading-relaxed">
+                            2nd Floor (S8) The Sanctuary Mall<br>
+                            Corner De Beers Ave & Broadway Blvd,<br>
+                            Somerset West, Cape Town, 7130
+                        </p>
+                    </div>
+
+                    <!-- Call Us -->
+                    <div class="space-y-2">
+                        <h3 class="text-xs font-bold text-slate-400 uppercase tracking-widest">CALL US</h3>
+                        <p class="text-white text-sm font-medium">
+                            <a href="tel:+27836797919" class="hover:text-blue-400 transition-colors">+27 83 679 7919</a>
+                        </p>
+                    </div>
+
+                    <!-- Email Us -->
+                    <div class="space-y-2">
+                        <h3 class="text-xs font-bold text-slate-400 uppercase tracking-widest">EMAIL US</h3>
+                        <p class="text-white text-sm font-medium">
+                            <a href="mailto:foundersechomarketing@gmail.com" class="hover:text-blue-400 transition-colors">foundersechomarketing@gmail.com</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column: Landing Page Consultation Form -->
+            <div class="lg:col-span-7">
+                <div class="bg-slate-900/50 border border-slate-800 rounded-3xl p-8 sm:p-10 shadow-2xl">
+                    
+                    <div class="text-center mb-8 space-y-2">
+                        <h2 class="text-2xl font-bold text-white">Let's Automate Your Operations</h2>
+                        <p class="text-slate-400 text-sm">
+                            Drop your details below. Our automation team will reach out to you shortly.
+                        </p>
+                    </div>
+
+                    <form action="#" method="POST" class="space-y-6">
+                        <!-- NAME -->
+                        <div class="space-y-2">
+                            <label for="name" class="block text-xs font-bold text-slate-300 uppercase tracking-wider">
+                                NAME
+                            </label>
+                            <input 
+                                type="text" 
+                                id="name" 
+                                name="name" 
+                                placeholder="John Doe" 
+                                required
+                                class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-slate-100 placeholder-slate-600 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition"
+                            >
+                        </div>
+
+                        <!-- EMAIL -->
+                        <div class="space-y-2">
+                            <label for="email" class="block text-xs font-bold text-slate-300 uppercase tracking-wider">
+                                EMAIL
+                            </label>
+                            <input 
+                                type="email" 
+                                id="email" 
+                                name="email" 
+                                placeholder="john@company.com" 
+                                required
+                                class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-slate-100 placeholder-slate-600 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition"
+                            >
+                        </div>
+
+                        <!-- BIGGEST OPERATIONAL FRICTION? -->
+                        <div class="space-y-2">
+                            <label for="friction" class="block text-xs font-bold text-slate-300 uppercase tracking-wider">
+                                BIGGEST OPERATIONAL FRICTION?
+                            </label>
+                            <textarea 
+                                id="friction" 
+                                name="friction" 
+                                rows="4" 
+                                placeholder="e.g., spending 10 hours a week manually creating invoices..." 
+                                required
+                                class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-slate-100 placeholder-slate-600 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition resize-none"
+                            ></textarea>
+                        </div>
+
+                        <!-- SUBMIT BUTTON -->
+                        <button 
+                            type="submit" 
+                            class="w-full bg-blue-600 hover:bg-blue-500 text-white font-semibold py-3.5 px-6 rounded-xl shadow-lg transition duration-200"
+                        >
+                            Submit Request
+                        </button>
+                    </form>
+
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-slate-800 bg-slate-950/60 py-6 text-center text-xs text-slate-500">
+        <p>© 2026 Founders Echo. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
