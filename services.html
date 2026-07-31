@@ -508,25 +508,40 @@
     </div>
 </footer>
 
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const menuBtn = document.getElementById('mobile-menu-btn');
-    const mobileMenu = document.getElementById('mobile-menu');
-    const hamburgerIcon = document.getElementById('hamburger-icon');
-    const closeIcon = document.getElementById('close-icon');
-
-    if (menuBtn && mobileMenu) {
-      menuBtn.addEventListener('click', () => {
-        // Toggle menu visibility
-        mobileMenu.classList.toggle('hidden');
-        
-        // Toggle icon states
-        hamburgerIcon.classList.toggle('hidden');
-        closeIcon.classList.toggle('hidden');
+    <!-- Lucide Icons Initializer -->
+    <script>
+      window.addEventListener('DOMContentLoaded', () => {
+          lucide.createIcons();
       });
-    }
-  });
-</script>
+    </script>
+
+    <!-- Mobile Navigation Toggle Script -->
+    <script>
+      const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+      const navMenu = document.getElementById('nav-menu');
+
+      mobileMenuBtn.addEventListener('click', () => {
+          navMenu.classList.toggle('hidden');
+          navMenu.classList.toggle('flex');
+          
+          const isExpanded = navMenu.classList.contains('flex');
+          mobileMenuBtn.innerHTML = isExpanded 
+              ? '<i data-lucide="x" class="w-6 h-6"></i>' 
+              : '<i data-lucide="menu" class="w-6 h-6"></i>';
+          lucide.createIcons();
+      });
+
+      navMenu.querySelectorAll('a').forEach(link => {
+          link.addEventListener('click', () => {
+              if (window.innerWidth < 768) {
+                  navMenu.classList.add('hidden');
+                  navMenu.classList.remove('flex');
+                  mobileMenuBtn.innerHTML = '<i data-lucide="menu" class="w-6 h-6"></i>';
+                  lucide.createIcons();
+              }
+          });
+      });
+    </script>
 
 </body>
 </html>
