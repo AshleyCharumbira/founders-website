@@ -22,7 +22,7 @@
         }
         
         .animate-fade-up {
-            animation: fadeInUp 2.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            animation: fadeInUp 3.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
             animation-delay: 0.2s; 
             opacity: 0;
         }
@@ -30,12 +30,12 @@
         /* Animated Pulsing Glow for Logo */
         @keyframes pulseGlow {
             0%, 100% {
-                box-shadow: 0 0 8px rgba(56, 189, 248, 0.3);
-                border-color: rgba(56, 189, 248, 0.5);
+                box-shadow: 0 0 6px rgba(96, 165, 250, 0.3);
+                border-color: rgba(96, 165, 250, 0.5);
             }
             50% {
-                box-shadow: 0 0 18px rgba(56, 189, 248, 0.8), 0 0 28px rgba(6, 182, 212, 0.4);
-                border-color: rgba(56, 189, 248, 1);
+                box-shadow: 0 0 16px rgba(96, 165, 250, 0.8), 0 0 24px rgba(59, 130, 246, 0.4);
+                border-color: rgba(96, 165, 250, 1);
             }
         }
 
@@ -50,139 +50,151 @@
         }
     </style>
 </head>
-<body class="bg-black text-slate-100 font-sans antialiased selection:bg-cyan-500/30 selection:text-cyan-200">
+<body class="bg-slate-950 text-slate-100 font-sans antialiased">
 
-<!-- Header matching global obsidian black styling -->
-<header class="sticky top-0 left-0 right-0 z-50 max-w-full bg-black/80 backdrop-blur-md border-b border-white/10 px-6 py-4 transition duration-200">
+<!-- Updated header class using bg-black/80 -->
+<header class="sticky top-0 left-0 right-0 z-50 max-w-full bg-black/80 backdrop-blur-md border-b border-slate-900/50 px-6 py-4 transition duration-200">
+    <style>
+        @keyframes eqBounce {
+            0%, 100% {
+                transform: scaleY(1);
+                filter: drop-shadow(0 0 2px rgba(96, 165, 250, 0.2));
+            }
+            50% {
+                transform: scaleY(1.3);
+                filter: drop-shadow(0 0 6px rgba(96, 165, 250, 0.5));
+                color: #818cf8;
+            }
+        }
+        .animate-eq {
+            animation: eqBounce 1.6s ease-in-out infinite;
+        }
+    </style>
+
     <div class="max-w-6xl mx-auto flex justify-between items-center relative">
 
         <a href="index.html" class="flex items-center gap-3 group cursor-pointer no-underline z-10">
             <!-- Image Logo with Thinner Border & Pulsing Glow -->
             <img src="New_logo.png" 
                  alt="Founders Echo Logo" 
-                 class="h-12 w-12 rounded-full border border-cyan-400/80 animate-glow-pulse object-cover mix-blend-screen">
+                 class="h-12 w-12 rounded-full border border-blue-400/80 animate-glow-pulse object-cover mix-blend-screen">
             
-            <!-- Static Premium Brand Name -->
-            <span class="text-xl font-bold text-cyan-400 group-hover:text-cyan-300 transition-colors duration-300 tracking-tight">
+            <!-- Static Premium Blue Brand Name -->
+            <span class="text-xl font-bold text-blue-400 group-hover:text-blue-300 transition-colors duration-300 tracking-tight">
                 FOUNDERS ECHO
             </span>
         </a>
 
-        <!-- Mobile Menu Toggle Button -->
+        <!-- Mobile Menu Toggle Button (Visible only on mobile) -->
         <button id="mobile-menu-btn" class="md:hidden text-slate-400 hover:text-white p-2 focus:outline-none z-10 cursor-pointer" aria-label="Toggle Navigation">
             <i data-lucide="menu" class="w-6 h-6"></i>
         </button>
 
         <!-- Navigation Links Container -->
-        <nav id="nav-menu" class="hidden absolute md:static top-full left-0 right-0 bg-black/95 md:bg-transparent border-b border-white/10 md:border-none p-6 md:p-0 flex-col md:flex-row md:flex items-center gap-6 md:gap-8 shadow-xl md:shadow-none transition-all duration-300">
-            <a href="index.html" class="text-sm font-semibold tracking-wider text-white transition duration-200 block py-1 md:py-0 hover:text-cyan-400">HOME</a>
-            <a href="about.html" class="text-sm font-semibold tracking-wider text-slate-400 hover:text-cyan-400 transition duration-200 block py-1 md:py-0">ABOUT US</a>
-            <a href="services.html" class="text-sm font-semibold tracking-wider text-slate-400 hover:text-cyan-400 transition duration-200 block py-1 md:py-0">SERVICES</a>
-            <a href="contact.html" class="text-sm font-semibold tracking-wider text-slate-400 hover:text-cyan-400 transition duration-200 block py-1 md:py-0">CONTACT US</a>
+        <nav id="nav-menu" class="hidden absolute md:static top-full left-0 right-0 bg-slate-950/95 md:bg-transparent border-b border-slate-900/80 md:border-none p-6 md:p-0 flex-col md:flex-row md:flex items-center gap-6 md:gap-8 shadow-xl md:shadow-none transition-all duration-300">
+            <a href="index.html" class="text-sm font-semibold tracking-wider text-white transition duration-200 block py-1 md:py-0">HOME</a>
+            <a href="about.html" class="text-sm font-semibold tracking-wider text-slate-400 hover:text-white transition duration-200 block py-1 md:py-0">ABOUT US</a>
+            <a href="services.html" class="text-sm font-semibold tracking-wider text-slate-400 hover:text-white transition duration-200 block py-1 md:py-0">SERVICES</a>
+            <a href="contact.html" class="text-sm font-semibold tracking-wider text-slate-400 hover:text-white transition duration-200 block py-1 md:py-0">CONTACT US</a>
         </nav>
 
         <!-- Get Started CTA (Desktop Only) -->
-        <a href="index.html#contact" class="hidden md:inline-block bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white text-sm font-semibold px-5 py-2.5 rounded-xl transition shadow-lg shadow-cyan-950/50">
+        <a href="index.html#contact" class="hidden md:inline-block bg-blue-600 hover:bg-blue-500 text-white text-sm font-medium px-4 py-2 rounded-lg transition">
             Get Started
         </a>
     </div>
 </header>
 
-    <!-- Hero Section -->
-    <section class="relative overflow-hidden bg-black pt-24 pb-28 text-center">
-        <!-- Re-themed SVG Background matching Logo Tones -->
+    <section class="relative overflow-hidden bg-slate-950 pt-20 pb-24 text-center">
         <div class="absolute inset-0 w-full h-full pointer-events-none select-none z-0">
             <svg class="w-full h-full" viewBox="0 0 1440 800" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-                <rect width="1440" height="800" fill="url(#black-base)"/>
-                <path d="M1440 0H600C800 200 450 550 900 800H1440V0Z" fill="url(#cyan-deep)" opacity="0.35"/>
-                <path d="M1440 0H800C950 250 650 500 1050 800H1440V0Z" fill="url(#blue-electric)" opacity="0.25"/>
-                <path d="M1440 0H950C1100 300 850 550 1200 800H1440V0Z" fill="url(#indigo-glow)" opacity="0.15"/>
+                <rect width="1440" height="800" fill="url(#slate-base)"/>
+                <path d="M1440 0H600C800 200 450 550 900 800H1440V0Z" fill="url(#indigo-deep)" opacity="0.4"/>
+                <path d="M1440 0H800C950 250 650 500 1050 800H1440V0Z" fill="url(#indigo-bright)" opacity="0.3"/>
+                <path d="M1440 0H950C1100 300 850 550 1200 800H1440V0Z" fill="url(#purple-glow)" opacity="0.15"/>
                 <defs>
-                    <linearGradient id="black-base" x1="0" y1="0" x2="1440" y2="0" gradientUnits="userSpaceOnUse">
-                        <stop offset="0%" stop-color="#000000"/>
-                        <stop offset="60%" stop-color="#030712"/>
-                        <stop offset="100%" stop-color="#0b0f19"/>
+                    <linearGradient id="slate-base" x1="0" y1="0" x2="1440" y2="0" gradientUnits="userSpaceOnUse">
+                        <stop offset="0%" stop-color="#020617"/>
+                        <stop offset="60%" stop-color="#020617"/>
+                        <stop offset="100%" stop-color="#0f172a"/>
                     </linearGradient>
-                    <linearGradient id="cyan-deep" x1="600" y1="400" x2="1440" y2="400" gradientUnits="userSpaceOnUse">
-                        <stop offset="0%" stop-color="#000000" stop-opacity="0"/>
-                        <stop offset="40%" stop-color="#083344" stop-opacity="0.6"/>
-                        <stop offset="100%" stop-color="#164e63"/>
+                    <linearGradient id="indigo-deep" x1="600" y1="400" x2="1440" y2="400" gradientUnits="userSpaceOnUse">
+                        <stop offset="0%" stop-color="#020617" stop-opacity="0"/>
+                        <stop offset="40%" stop-color="#1e1b4b" stop-opacity="0.6"/>
+                        <stop offset="100%" stop-color="#312e81"/>
                     </linearGradient>
-                    <linearGradient id="blue-electric" x1="700" y1="400" x2="1440" y2="400" gradientUnits="userSpaceOnUse">
-                        <stop offset="0%" stop-color="#000000" stop-opacity="0"/>
-                        <stop offset="50%" stop-color="#0e7490" stop-opacity="0.4"/>
-                        <stop offset="100%" stop-color="#0284c7" stop-opacity="0.3"/>
+                    <linearGradient id="indigo-bright" x1="700" y1="400" x2="1440" y2="400" gradientUnits="userSpaceOnUse">
+                        <stop offset="0%" stop-color="#020617" stop-opacity="0"/>
+                        <stop offset="50%" stop-color="#312e81" stop-opacity="0.5"/>
+                        <stop offset="100%" stop-color="#3b82f6" stop-opacity="0.4"/>
                     </linearGradient>
-                    <linearGradient id="indigo-glow" x1="900" y1="400" x2="1440" y2="400" gradientUnits="userSpaceOnUse">
-                        <stop offset="0%" stop-color="#000000" stop-opacity="0"/>
-                        <stop offset="100%" stop-color="#38bdf8"/>
+                    <linearGradient id="purple-glow" x1="900" y1="400" x2="1440" y2="400" gradientUnits="userSpaceOnUse">
+                        <stop offset="0%" stop-color="#020617" stop-opacity="0"/>
+                        <stop offset="100%" stop-color="#c084fc"/>
                     </linearGradient>
                 </defs>
             </svg>
         </div>
-        <!-- Tech Subtle Grid -->
-        <div class="absolute inset-0 bg-[linear-gradient(to_right,#1e293b15_1px,transparent_1px),linear-gradient(to_bottom,#1e293b15_1px,transparent_1px)] bg-[size:3.5rem_3.5rem] z-0"></div>
+        <div class="absolute inset-0 bg-[linear-gradient(to_right,#1e293b10_1px,transparent_1px),linear-gradient(to_bottom,#1e293b10_1px,transparent_1px)] bg-[size:4rem_4rem] z-0"></div>
 
         <div class="max-w-4xl mx-auto px-6 relative z-10">
            <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight text-white mb-6 leading-tight animate-fade-up">
                 The Automation Engine for <br>
-                <span class="bg-gradient-to-r from-cyan-400 via-blue-400 to-indigo-400 bg-clip-text text-transparent drop-shadow-[0_0_20px_rgba(56,189,248,0.3)]">Scaling Businesses</span>
+                <span class="bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-400 bg-clip-text text-transparent">Scaling Businesses</span>
             </h1>
-            <p class="text-lg text-slate-400 max-w-2xl mx-auto mb-10 leading-relaxed font-normal">
+            <p class="text-lg text-slate-400 max-w-2xl mx-auto mb-10 leading-relaxed">
                 We architect the internal systems, financial workflows, and data pipelines that eliminate manual operational friction. Stop working in your business, start scaling it.
             </p>
             <div class="flex justify-center gap-4">
-                <a href="#contact" class="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white font-semibold px-7 py-3.5 rounded-xl transition shadow-xl shadow-cyan-950/60 hover:shadow-cyan-500/20">
+                <a href="#contact" class="bg-slate-100 hover:bg-white text-slate-950 font-medium px-6 py-3 rounded-xl transition shadow-lg shadow-slate-950/40">
                     Book a Systems Audit
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- Services Grid Section -->
-    <section id="services" class="max-w-6xl mx-auto px-6 py-20">
+    <section id="services" class="max-w-5xl mx-auto px-6 py-16">
         <div class="grid md:grid-cols-3 gap-8">
-            <div class="bg-slate-950/80 backdrop-blur-md border border-slate-800/80 p-8 rounded-2xl shadow-[0_10px_30px_rgba(0,0,0,0.8)] transition-all duration-300 hover:-translate-y-1.5 hover:border-cyan-500/50 hover:shadow-[0_10px_30px_rgba(6,182,212,0.15)] group">
-                <i data-lucide="trending-up" class="w-6 h-6 text-cyan-400 mb-4 block group-hover:scale-110 transition-transform duration-300"></i>
+            <div class="bg-slate-900/60 backdrop-blur-sm border-t border-l border-slate-700/50 border-b border-r border-slate-900 p-8 rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.5)] transition-all duration-300 hover:-translate-y-2 hover:bg-slate-900 hover:border-slate-700/80">
+                <i data-lucide="trending-up" class="w-6 h-6 text-blue-400 mb-4 block"></i>
                 <h3 class="text-lg font-bold text-white mb-2">Revenue & RevOps</h3>
                 <p class="text-sm text-slate-400 leading-relaxed">Lead enrichment, automated CRM pipelines, and post-meeting AI synthesis that keep sales teams selling.</p>
             </div>
-            <div class="bg-slate-950/80 backdrop-blur-md border border-slate-800/80 p-8 rounded-2xl shadow-[0_10px_30px_rgba(0,0,0,0.8)] transition-all duration-300 hover:-translate-y-1.5 hover:border-blue-500/50 hover:shadow-[0_10px_30px_rgba(59,130,246,0.15)] group">
-                <i data-lucide="receipt" class="w-6 h-6 text-blue-400 mb-4 block group-hover:scale-110 transition-transform duration-300"></i>
+            <div class="bg-slate-900/60 backdrop-blur-sm border-t border-l border-slate-700/50 border-b border-r border-slate-900 p-8 rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.5)] transition-all duration-300 hover:-translate-y-2 hover:bg-slate-900 hover:border-slate-700/80">
+                <i data-lucide="receipt" class="w-6 h-6 text-indigo-400 mb-4 block"></i>
                 <h3 class="text-lg font-bold text-white mb-2">Financial Automation</h3>
                 <p class="text-sm text-slate-400 leading-relaxed">End-to-end invoice generation, automated payment reconciliation, and ledger syncing with Xero and QuickBooks.</p>
             </div>
-            <div class="bg-slate-950/80 backdrop-blur-md border border-slate-800/80 p-8 rounded-2xl shadow-[0_10px_30px_rgba(0,0,0,0.8)] transition-all duration-300 hover:-translate-y-1.5 hover:border-indigo-500/50 hover:shadow-[0_10px_30px_rgba(99,102,241,0.15)] group">
-                <i data-lucide="cpu" class="w-6 h-6 text-indigo-400 mb-4 block group-hover:scale-110 transition-transform duration-300"></i>
+            <div class="bg-slate-900/60 backdrop-blur-sm border-t border-l border-slate-700/50 border-b border-r border-slate-900 p-8 rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.5)] transition-all duration-300 hover:-translate-y-2 hover:bg-slate-900 hover:border-slate-700/80">
+                <i data-lucide="cpu" class="w-6 h-6 text-purple-400 mb-4 block"></i>
                 <h3 class="text-lg font-bold text-white mb-2">Core Infrastructure</h3>
                 <p class="text-sm text-slate-400 leading-relaxed">Custom, self-hosted data routing engines built to connect your entire disparate software stack flawlessly.</p>
             </div>
-            <div class="bg-slate-950/80 backdrop-blur-md border border-slate-800/80 p-8 rounded-2xl shadow-[0_10px_30px_rgba(0,0,0,0.8)] transition-all duration-300 hover:-translate-y-1.5 hover:border-cyan-500/50 hover:shadow-[0_10px_30px_rgba(6,182,212,0.15)] group">
-                <i data-lucide="megaphone" class="w-6 h-6 text-cyan-400 mb-4 block group-hover:scale-110 transition-transform duration-300"></i>
+            <div class="bg-slate-900/60 backdrop-blur-sm border-t border-l border-slate-700/50 border-b border-r border-slate-900 p-8 rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.5)] transition-all duration-300 hover:-translate-y-2 hover:bg-slate-900 hover:border-slate-700/80">
+                <i data-lucide="megaphone" class="w-6 h-6 text-blue-400 mb-4 block"></i>
                 <h3 class="text-lg font-bold text-white mb-2">Digital Marketing</h3>
                 <p class="text-sm text-slate-400 leading-relaxed">Establish consistent brand authority and nurture client relationships across all platforms through automated, high-impact content generation.</p>
             </div>
-            <div class="bg-slate-950/80 backdrop-blur-md border border-slate-800/80 p-8 rounded-2xl shadow-[0_10px_30px_rgba(0,0,0,0.8)] transition-all duration-300 hover:-translate-y-1.5 hover:border-blue-500/50 hover:shadow-[0_10px_30px_rgba(59,130,246,0.15)] group">
-                <i data-lucide="laptop" class="w-6 h-6 text-blue-400 mb-4 block group-hover:scale-110 transition-transform duration-300"></i>
+            <div class="bg-slate-900/60 backdrop-blur-sm border-t border-l border-slate-700/50 border-b border-r border-slate-900 p-8 rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.5)] transition-all duration-300 hover:-translate-y-2 hover:bg-slate-900 hover:border-slate-700/80">
+                <i data-lucide="laptop" class="w-6 h-6 text-indigo-400 mb-4 block"></i>
                 <h3 class="text-lg font-bold text-white mb-2">Web Development</h3>
                 <p class="text-sm text-slate-400 leading-relaxed">Secure a high-performance, bespoke company website engineered to convert visitors into clients and scale seamlessly with your business.</p>
             </div>
-            <div class="bg-slate-950/80 backdrop-blur-md border border-slate-800/80 p-8 rounded-2xl shadow-[0_10px_30px_rgba(0,0,0,0.8)] transition-all duration-300 hover:-translate-y-1.5 hover:border-indigo-500/50 hover:shadow-[0_10px_30px_rgba(99,102,241,0.15)] group">
-                <i data-lucide="user-check" class="w-6 h-6 text-indigo-400 mb-4 block group-hover:scale-110 transition-transform duration-300"></i>
+            <div class="bg-slate-900/60 backdrop-blur-sm border-t border-l border-slate-700/50 border-b border-r border-slate-900 p-8 rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.5)] transition-all duration-300 hover:-translate-y-2 hover:bg-slate-900 hover:border-slate-700/80">
+                <i data-lucide="user-check" class="w-6 h-6 text-purple-400 mb-4 block"></i>
                 <h3 class="text-lg font-bold text-white mb-2">Automated Onboarding</h3>
                 <p class="text-sm text-slate-400 leading-relaxed">Streamline client and talent acquisition with frictionless, automated workflows that instantly generate legal contracts and handle system provisioning.</p>
             </div>
         </div>
     </section>
 
-    <!-- Why Automate Section -->
-    <section id="about" class="max-w-6xl mx-auto px-6 py-20 border-t border-white/10">
+    <section id="about" class="max-w-5xl mx-auto px-6 py-20 border-t border-slate-900">
         <div class="grid md:grid-cols-12 gap-12 items-center">
             <div class="md:col-span-7 space-y-6">
-                <div class="text-xs font-bold tracking-widest text-cyan-400 uppercase">Why Automate?</div>
+                <div class="text-xs font-semibold tracking-widest text-blue-400 uppercase">Why Automate?</div>
                 <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-white leading-tight">
                     Build a Business That Operates <br>
-                    <span class="bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">Independent of Your Time</span>
+                    <span class="bg-gradient-to-r from-blue-400 to-indigo-400 bg-clip-text text-transparent">Independent of Your Time</span>
                 </h2>
                 <div class="space-y-4 text-slate-400 text-sm sm:text-base leading-relaxed">
                     <p>In a growing company, manual overhead is the silent killer of velocity. Spending critical hours cross-referencing ledgers, copy-pasting customer details across software silos, and tracking client delivery tasks manually acts as an operational tax on expansion.</p>
@@ -190,38 +202,38 @@
                 </div>
 
                 <div class="grid grid-cols-2 gap-4 pt-4">
-                    <div class="flex items-center gap-2 text-sm text-slate-200"><span class="text-cyan-400 font-bold">✓</span> 100% Data Accuracy</div>
-                    <div class="flex items-center gap-2 text-sm text-slate-200"><span class="text-cyan-400 font-bold">✓</span> Instant Lead Processing</div>
-                    <div class="flex items-center gap-2 text-sm text-slate-200"><span class="text-blue-400 font-bold">✓</span> Flawless Ledger Sync</div>
-                    <div class="flex items-center gap-2 text-sm text-slate-200"><span class="text-blue-400 font-bold">✓</span> Scalable Operations</div>
+                    <div class="flex items-center gap-2 text-sm text-slate-200"><span class="text-blue-400">✓</span> 100% Data Accuracy</div>
+                    <div class="flex items-center gap-2 text-sm text-slate-200"><span class="text-blue-400">✓</span> Instant Lead Processing</div>
+                    <div class="flex items-center gap-2 text-sm text-slate-200"><span class="text-indigo-400">✓</span> Flawless Ledger Sync</div>
+                    <div class="flex items-center gap-2 text-sm text-slate-200"><span class="text-indigo-400">✓</span> Scalable Operations</div>
                 </div>
             </div>
 
             <div class="md:col-span-5 relative flex justify-center">
-                <div class="absolute inset-0 bg-gradient-to-tr from-cyan-500/20 to-blue-600/10 rounded-3xl blur-2xl -z-10"></div>
-                <div class="bg-slate-950 p-3 rounded-2xl border border-slate-800 shadow-2xl overflow-hidden w-full max-w-[400px]">
-                    <img src="website_image_homepage.png" alt="Process Automation Visual" class="w-full h-auto rounded-xl object-cover grayscale-[15%] hover:grayscale-0 transition duration-300">
+                <div class="absolute inset-0 bg-gradient-to-tr from-blue-500/10 to-indigo-500/5 rounded-3xl blur-2xl -z-10"></div>
+                <div class="bg-slate-900/40 p-3 rounded-2xl border-t border-l border-slate-700/30 border-b border-r border-slate-950 shadow-2xl overflow-hidden w-full max-w-[400px]">
+                    <img src="website_image_homepage.png" alt="Process Automation Visual" class="w-full h-auto rounded-xl object-cover grayscale-[20%] hover:grayscale-0 transition duration-300">
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- SECTION 2: RPA & Bottom Line -->
-    <section class="py-20 max-w-7xl mx-auto px-6 md:px-12 border-t border-white/5">
+    <!-- SECTION 2: RPA & Bottom Line (Image Left, Text Right) -->
+    <section class="py-16 md:py-24 max-w-7xl mx-auto px-6 md:px-12 border-t border-slate-900/50">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <!-- Image Column -->
+            <!-- Image Column (Now First / Left) -->
             <div class="relative group">
-                <div class="absolute -inset-1 rounded-2xl bg-gradient-to-r from-cyan-500 to-blue-500 opacity-20 blur group-hover:opacity-40 transition duration-1000"></div>
-                <div class="relative bg-slate-950 border border-slate-800 rounded-2xl overflow-hidden aspect-[4/3] flex items-center justify-center">
+                <div class="absolute -inset-1 rounded-2xl bg-gradient-to-r from-indigo-500 to-purple-500 opacity-20 blur group-hover:opacity-30 transition duration-1000"></div>
+                <div class="relative bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden aspect-[4/3] flex items-center justify-center">
                     <img src="pexels-yankrukov-7693201.jpg" alt="Financial analytics dashboard" class="object-cover w-full h-full opacity-80" />
                 </div>
             </div>
             
-            <!-- Text Column -->
+            <!-- Text Column (Now Second / Right) -->
             <div class="space-y-6">
                 <h2 class="text-3xl md:text-4xl font-bold text-white tracking-tight leading-tight">
                     Cut Costs and <br/>
-                    <span class="text-cyan-400">Improve Your Margins</span>
+                    <span class="text-blue-400">Improve Your Margins</span>
                 </h2>
                 <p class="text-slate-400 text-base md:text-lg leading-relaxed">
                     Beyond simple time-saving, implementing Robotic Process Automation (RPA) is a high-yield strategy that directly protects and enhances your bottom line. By executing high-volume, rules-based financial tasks—such as instant payment reconciliation and cross-platform CRM updates—at lightning speed and with absolute precision, RPA slashes costly processing errors and reduces administrative overhead.
@@ -233,14 +245,14 @@
         </div>
     </section>
 
-    <!-- SECTION 1: Employee Experience -->
-    <section class="py-20 max-w-7xl mx-auto px-6 md:px-12">
+    <!-- SECTION 1: Employee Experience (Text Left, Image Right) -->
+    <section class="py-16 md:py-24 max-w-7xl mx-auto px-6 md:px-12">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <!-- Text Column -->
             <div class="space-y-6">
                 <h2 class="text-3xl md:text-4xl font-bold text-white tracking-tight leading-tight">
                     Empower Your Team, <br/>
-                    <span class="text-cyan-400">Eliminate Burnout</span>
+                    <span class="text-blue-400">Eliminate Burnout</span>
                 </h2>
                 <p class="text-slate-400 text-base md:text-lg leading-relaxed">
                     No one joins a company to spend their hours copying and pasting transactional data between systems or manually cross-referencing invoice spreadsheets. By offloading repetitive, mind-numbing administrative tasks to intelligent automated pipelines, you return meaningful, high-impact work to your workforce. 
@@ -252,47 +264,46 @@
             
             <!-- Image Column -->
             <div class="relative group">
-                <div class="absolute -inset-1 rounded-2xl bg-gradient-to-r from-blue-500 to-cyan-500 opacity-20 blur group-hover:opacity-40 transition duration-1000"></div>
-                <div class="relative bg-slate-950 border border-slate-800 rounded-2xl overflow-hidden aspect-[4/3] flex items-center justify-center">
+                <div class="absolute -inset-1 rounded-2xl bg-gradient-to-r from-blue-500 to-indigo-500 opacity-20 blur group-hover:opacity-30 transition duration-1000"></div>
+                <div class="relative bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden aspect-[4/3] flex items-center justify-center">
                     <img src="happy_team.jpg" alt="Happy productive team working" class="object-cover w-full h-full opacity-80" />
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Form Section -->
-    <section id="contact" class="max-w-5xl mx-auto px-6 py-20 border-t border-white/10 relative">
+    <section id="contact" class="max-w-5xl mx-auto px-6 py-20 border-t border-slate-900 relative">
         <div class="max-w-md mx-auto mb-10 text-center space-y-3">
-            <div class="text-xs font-bold tracking-widest text-cyan-400 uppercase">Get Started</div>
+            <div class="text-xs font-semibold tracking-widest text-blue-400 uppercase">Get Started</div>
             <h2 class="text-3xl font-extrabold tracking-tight text-white">Book a Consultation</h2>
         </div>
 
-        <div class="max-w-md mx-auto bg-slate-950/90 border border-slate-800/80 p-8 rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.9)]">
+        <div class="max-w-md mx-auto bg-slate-900 border border-slate-800 p-8 rounded-2xl shadow-xl">
             <h3 class="text-xl font-bold text-white mb-2 text-center">Let's Automate Your Operations</h3>
             <p class="text-sm text-slate-400 text-center mb-6">Drop your details below. Our automation team will reach out to you shortly.</p>
             
             <form id="intake-form" class="space-y-4">
                 <div>
                     <label class="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2" for="name">Name</label>
-                    <input class="w-full bg-black border border-slate-800 rounded-xl px-4 py-3 text-slate-100 placeholder-slate-600 focus:outline-none focus:border-cyan-500 text-sm transition-colors" type="text" id="name" name="name" placeholder="John Doe" required>
+                    <input class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-slate-100 placeholder-slate-600 focus:outline-none focus:border-blue-500 text-sm" type="text" id="name" name="name" placeholder="John Doe" required>
                 </div>
                 <div>
                     <label class="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2" for="email">Email</label>
-                    <input class="w-full bg-black border border-slate-800 rounded-xl px-4 py-3 text-slate-100 placeholder-slate-600 focus:outline-none focus:border-cyan-500 text-sm transition-colors" type="email" id="email" name="email" placeholder="john@company.com" required>
+                    <input class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-slate-100 placeholder-slate-600 focus:outline-none focus:border-blue-500 text-sm" type="email" id="email" name="email" placeholder="john@company.com" required>
                 </div>
                 <div>
                     <label class="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2" for="message">Biggest Operational Friction?</label>
-                    <textarea class="w-full bg-black border border-slate-800 rounded-xl px-4 py-3 text-slate-100 placeholder-slate-600 focus:outline-none focus:border-cyan-500 text-sm h-28 resize-none transition-colors" id="message" name="message" placeholder="e.g., spending 10 hours a week manually creating invoices..." required></textarea>
+                    <textarea class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-slate-100 placeholder-slate-600 focus:outline-none focus:border-blue-500 text-sm h-28 resize-none" id="message" name="message" placeholder="e.g., spending 10 hours a week manually creating invoices..." required></textarea>
                 </div>
-                <button class="w-full bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white font-semibold py-3.5 rounded-xl transition shadow-lg shadow-cyan-950/50 text-sm cursor-pointer" type="submit">
+                <button class="w-full bg-blue-600 hover:bg-blue-500 text-white font-medium py-3 rounded-xl transition shadow-lg shadow-blue-950 text-sm cursor-pointer" type="submit">
                     Submit Request
                 </button>
             </form>
         </div>
 
-        <div id="success-modal" class="hidden fixed inset-0 bg-black/85 backdrop-blur-md flex items-center justify-center z-50 px-4">
-            <div class="bg-slate-950 border border-slate-800 p-8 rounded-2xl max-w-sm w-full text-center shadow-[0_20px_50px_rgba(0,0,0,0.9)] animate-fade-up">
-                <div class="w-12 h-12 bg-cyan-500/10 text-cyan-400 rounded-full flex items-center justify-center mx-auto mb-4 text-xl">✓</div>
+        <div id="success-modal" class="hidden fixed inset-0 bg-slate-950/80 backdrop-blur-sm flex items-center justify-center z-50 px-4">
+            <div class="bg-slate-900 border border-slate-800 p-8 rounded-2xl max-w-sm w-full text-center shadow-[0_20px_50px_rgba(0,0,0,0.6)] animate-fade-up">
+                <div class="w-12 h-12 bg-blue-500/10 text-blue-400 rounded-full flex items-center justify-center mx-auto mb-4 text-xl">✓</div>
                 <h3 class="text-xl font-bold text-white mb-2">Request Submitted!</h3>
                 <p class="text-sm text-slate-400 mb-6">Our automation team will reach out to you shortly.</p>
                 <button id="close-modal" class="w-full bg-slate-100 hover:bg-white text-slate-950 font-semibold py-2.5 rounded-xl transition text-sm cursor-pointer">
@@ -302,8 +313,7 @@
         </div>
     </section>
 
-<!-- Footer -->
-<footer class="bg-black/80 backdrop-blur-md border-t border-white/10 text-slate-400 py-16 px-6 md:px-12">
+<footer class="bg-black/80 backdrop-blur-md border-t border-slate-900 text-slate-400 py-16 px-6 md:px-12">
     <div class="max-w-7xl mx-auto">
         <!-- Top Section: Grid Layout -->
         <div class="grid grid-cols-1 md:grid-cols-3 gap-12 pb-12">
@@ -314,8 +324,8 @@
                 <a href="#" class="flex items-center gap-3 group">
                     <img src="New_logo.png" 
                          alt="Founders Echo Logo" 
-                         class="h-12 w-12 rounded-full border border-cyan-400/80 animate-glow-pulse object-cover mix-blend-screen">
-                    <span class="text-xl font-bold text-cyan-400 group-hover:text-cyan-300 transition-colors duration-300 tracking-tight">
+                         class="h-12 w-12 rounded-full border border-blue-400/80 animate-glow-pulse object-cover mix-blend-screen">
+                    <span class="text-xl font-bold text-blue-400 group-hover:text-blue-300 transition-colors duration-300 tracking-tight">
                         FOUNDERS ECHO
                     </span>
                 </a>
@@ -328,10 +338,10 @@
             <div>
                 <h4 class="text-sm font-semibold text-white uppercase tracking-wider mb-6">Quick Links</h4>
                 <ul class="space-y-3 text-sm">
-                    <li><a href="#home" class="hover:text-cyan-400 transition-colors">Home</a></li>
-                    <li><a href="#services" class="hover:text-cyan-400 transition-colors">Services</a></li>
-                    <li><a href="#about" class="hover:text-cyan-400 transition-colors">About Us</a></li>
-                    <li><a href="#contact" class="hover:text-cyan-400 transition-colors">Book a Call</a></li>
+                    <li><a href="#home" class="hover:text-blue-400 transition-colors">Home</a></li>
+                    <li><a href="#services" class="hover:text-blue-400 transition-colors">Services</a></li>
+                    <li><a href="#about" class="hover:text-blue-400 transition-colors">About Us</a></li>
+                    <li><a href="#contact" class="hover:text-blue-400 transition-colors">Book a Call</a></li>
                 </ul>
             </div>
 
@@ -342,12 +352,12 @@
                     <!-- Email -->
                     <li class="flex items-center gap-3">
                         <i data-lucide="mail" class="w-4 h-4 text-slate-500"></i>
-                        <a href="mailto:hello@foundersecho.com" class="hover:text-cyan-400 transition-colors">info@foundersecho.com</a>
+                        <a href="mailto:hello@foundersecho.com" class="hover:text-blue-400 transition-colors">info@foundersecho.com</a>
                     </li>
                     <!-- Phone -->
                     <li class="flex items-center gap-3">
                         <i data-lucide="phone" class="w-4 h-4 text-slate-500"></i>
-                        <a href="tel:+27211234567" class="hover:text-cyan-400 transition-colors">+27 76 436 7859</a>
+                        <a href="tel:+27211234567" class="hover:text-blue-400 transition-colors">+27 76 436 7859</a>
                     </li>
                     <!-- Address -->
                     <li class="flex items-start gap-3">
@@ -362,7 +372,7 @@
         </div>
 
         <!-- Divider Line -->
-        <div class="border-t border-white/10 my-8"></div>
+        <div class="border-t border-slate-900/80 my-8"></div>
 
         <!-- Bottom Copyright -->
         <div class="flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-600">
@@ -390,6 +400,7 @@
           navMenu.classList.toggle('hidden');
           navMenu.classList.toggle('flex');
           
+          // Toggle icon between hamburger and close (x)
           const isExpanded = navMenu.classList.contains('flex');
           mobileMenuBtn.innerHTML = isExpanded 
               ? '<i data-lucide="x" class="w-6 h-6"></i>' 
@@ -397,6 +408,7 @@
           lucide.createIcons();
       });
 
+      // Close mobile menu when clicking a link
       navMenu.querySelectorAll('a').forEach(link => {
           link.addEventListener('click', () => {
               if (window.innerWidth < 768) {
