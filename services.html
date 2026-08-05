@@ -4,102 +4,102 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- Favicon link copied from index.html -->
+    <!-- Favicon link -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=1">
     <title>Services | Founders Echo</title>
     <script src="https://unpkg.com/lucide@latest"></script>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+        @keyframes pulseGlow {
+            0%, 100% {
+                opacity: 0.6;
+                filter: drop-shadow(0 0 6px rgba(6, 182, 212, 0.4));
+            }
+            50% {
+                opacity: 1;
+                filter: drop-shadow(0 0 12px rgba(59, 130, 246, 0.8));
+            }
+        }
+        .animate-pulse-glow {
+            animation: pulseGlow 2.5s ease-in-out infinite;
+        }
+    </style>
 </head>
-<body class="bg-slate-950 text-slate-300 font-sans antialiased min-h-screen">
+<body class="bg-black text-zinc-300 font-sans antialiased min-h-screen selection:bg-cyan-500/30 selection:text-cyan-200">
 
-    <!-- Animated Brand Header -->
-    <header class="sticky top-0 left-0 right-0 z-50 max-w-full bg-slate-950/80 backdrop-blur-md border-b border-slate-900/50 px-6 py-4 transition duration-200">
-        <style>
-            @keyframes eqBounce {
-                0%, 100% {
-                    transform: scaleY(1);
-                    filter: drop-shadow(0 0 2px rgba(96, 165, 250, 0.2));
-                }
-                50% {
-                    transform: scaleY(1.3);
-                    filter: drop-shadow(0 0 6px rgba(96, 165, 250, 0.5));
-                    color: #818cf8;
-                }
-            }
-            .animate-eq {
-                animation: eqBounce 1.6s ease-in-out infinite;
-            }
-        </style>
-
+    <!-- Header Navigation -->
+    <header class="sticky top-0 left-0 right-0 z-50 max-w-full bg-black/80 backdrop-blur-md border-b border-zinc-900/80 px-6 py-4 transition duration-200">
         <div class="max-w-6xl mx-auto flex justify-between items-center relative">
 
             <a href="index.html" class="flex items-center gap-3 group cursor-pointer no-underline z-10">
                 <!-- Pulsing Soundwave Logo -->
                 <div class="flex items-end gap-1 h-6 w-8 justify-center">
-                    <span class="w-1 bg-blue-500 rounded-full animate-pulse" style="animation-duration: 0.8s; height: 40%;"></span>
-                    <span class="w-1 bg-indigo-500 rounded-full animate-pulse" style="animation-duration: 1.1s; height: 100%;"></span>
-                    <span class="w-1 bg-purple-500 rounded-full animate-pulse" style="animation-duration: 0.9s; height: 60%;"></span>
+                    <span class="w-1 bg-cyan-400 rounded-full animate-pulse" style="animation-duration: 0.8s; height: 40%;"></span>
+                    <span class="w-1 bg-blue-500 rounded-full animate-pulse" style="animation-duration: 1.1s; height: 100%;"></span>
+                    <span class="w-1 bg-cyan-300 rounded-full animate-pulse" style="animation-duration: 0.9s; height: 60%;"></span>
                     <span class="w-1 bg-blue-400 rounded-full animate-pulse" style="animation-duration: 1.3s; height: 80%;"></span>
-                    <span class="w-1 bg-indigo-400 rounded-full animate-pulse" style="animation-duration: 0.7s; height: 30%;"></span>
+                    <span class="w-1 bg-indigo-500 rounded-full animate-pulse" style="animation-duration: 0.7s; height: 30%;"></span>
                 </div>
                 
-                <!-- Static Premium Blue Brand Name -->
-                <span class="text-xl font-bold text-blue-400 group-hover:text-blue-300 transition-colors duration-300 tracking-tight">
+                <!-- Vibrant Cyan/Electric Blue Brand Gradient -->
+                <span class="text-xl font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent group-hover:opacity-90 transition-opacity tracking-tight">
                     FOUNDERS ECHO
                 </span>
             </a>
 
-            <!-- Mobile Menu Toggle Button (Visible only on mobile) -->
-            <button id="mobile-menu-btn" class="md:hidden text-slate-400 hover:text-white p-2 focus:outline-none z-10 cursor-pointer" aria-label="Toggle Navigation">
+            <!-- Mobile Menu Toggle Button -->
+            <button id="mobile-menu-btn" class="md:hidden text-zinc-400 hover:text-white p-2 focus:outline-none z-10 cursor-pointer" aria-label="Toggle Navigation">
                 <i data-lucide="menu" class="w-6 h-6"></i>
             </button>
 
-            <!-- Navigation Links Container -->
-            <nav id="nav-menu" class="hidden absolute md:static top-full left-0 right-0 bg-slate-950/95 md:bg-transparent border-b border-slate-900/80 md:border-none p-6 md:p-0 flex-col md:flex-row md:flex items-center gap-6 md:gap-8 shadow-xl md:shadow-none transition-all duration-300">
-                <a href="index.html" class="text-sm font-semibold tracking-wider text-slate-400 hover:text-white transition duration-200 block py-1 md:py-0">HOME</a>
-                <a href="about.html" class="text-sm font-semibold tracking-wider text-slate-400 hover:text-white transition duration-200 block py-1 md:py-0">ABOUT US</a>
-                <a href="services.html" class="text-sm font-semibold tracking-wider text-white transition duration-200 block py-1 md:py-0">SERVICES</a>
-                <a href="contact.html" class="text-sm font-semibold tracking-wider text-slate-400 hover:text-white transition duration-200 block py-1 md:py-0">CONTACT US</a>
+            <!-- Navigation Links -->
+            <nav id="nav-menu" class="hidden absolute md:static top-full left-0 right-0 bg-black/95 md:bg-transparent border-b border-zinc-900 md:border-none p-6 md:p-0 flex-col md:flex-row md:flex items-center gap-6 md:gap-8 shadow-2xl md:shadow-none transition-all duration-300">
+                <a href="index.html" class="text-sm font-semibold tracking-wider text-zinc-400 hover:text-cyan-400 transition duration-200 block py-1 md:py-0">HOME</a>
+                <a href="about.html" class="text-sm font-semibold tracking-wider text-zinc-400 hover:text-cyan-400 transition duration-200 block py-1 md:py-0">ABOUT US</a>
+                <a href="services.html" class="text-sm font-semibold tracking-wider text-cyan-400 transition duration-200 block py-1 md:py-0">SERVICES</a>
+                <a href="contact.html" class="text-sm font-semibold tracking-wider text-zinc-400 hover:text-cyan-400 transition duration-200 block py-1 md:py-0">CONTACT US</a>
             </nav>
 
-            <!-- Get Started CTA (Desktop Only) -->
-            <a href="index.html#contact" class="hidden md:inline-block bg-blue-600 hover:bg-blue-500 text-white text-sm font-medium px-4 py-2 rounded-lg transition">
+            <!-- Primary Gradient CTA -->
+            <a href="index.html#contact" class="hidden md:inline-block bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white text-sm font-semibold px-5 py-2.5 rounded-lg shadow-lg shadow-cyan-500/20 hover:shadow-cyan-500/30 transition-all duration-300">
                 Get Started
             </a>
         </div>
     </header>
 
     <!-- Hero Section -->
-    <section class="max-w-5xl mx-auto px-6 pt-16 pb-12 text-center space-y-4">
-        <div class="text-xs font-semibold tracking-widest text-blue-400 uppercase">OUR SERVICES</div>
-        <h1 class="text-4xl sm:text-5xl font-extrabold text-white tracking-tight">
-            Tailored Business Solutions
+    <section class="max-w-5xl mx-auto px-6 pt-20 pb-12 text-center space-y-4">
+        <div class="inline-block text-xs font-semibold tracking-widest text-cyan-400 uppercase bg-cyan-500/10 border border-cyan-500/20 px-3 py-1 rounded-full">
+            OUR CAPABILITIES
+        </div>
+        <h1 class="text-4xl sm:text-6xl font-extrabold text-white tracking-tight">
+            Tailored <span class="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">Business Automation</span>
         </h1>
-        <p class="text-slate-400 max-w-2xl mx-auto text-base sm:text-lg">
-            Explore our specialized workflows engineered to eliminate operational bottlenecks, reduce error, and scale your operations without increasing headcount.
+        <p class="text-zinc-400 max-w-2xl mx-auto text-base sm:text-lg leading-relaxed">
+            Explore our specialized workflows engineered to eliminate operational bottlenecks, eliminate manual error, and scale without swelling headcount.
         </p>
     </section>
 
     <!-- Service #1: Financial Process Automation -->
-    <section id="financial-automation" class="max-w-6xl mx-auto px-6 py-12">
-        <div class="bg-slate-900/50 border border-slate-800 rounded-3xl p-8 sm:p-12 space-y-12 shadow-2xl">
+    <section id="financial-automation" class="max-w-6xl mx-auto px-6 py-10">
+        <div class="bg-zinc-900/40 backdrop-blur-xl border border-zinc-800/80 hover:border-cyan-500/40 rounded-3xl p-8 sm:p-12 space-y-12 shadow-2xl transition duration-300">
             
             <!-- Section Header -->
             <div class="max-w-3xl space-y-3">
-                <span class="px-3 py-1 bg-blue-500/10 text-blue-400 border border-blue-500/20 rounded-full text-xs font-semibold uppercase tracking-wider">
+                <span class="px-3 py-1 bg-cyan-500/10 text-cyan-400 border border-cyan-500/20 rounded-full text-xs font-semibold uppercase tracking-wider">
                     FINANCIAL AUTOMATION
                 </span>
                 <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Financial Process Automation</h2>
-                <p class="text-slate-400 leading-relaxed text-base">
-                    Manual ledger entries, invoice tracking, and payment reconciliations cost modern companies hundreds of lost hours every quarter. We design automated, multi-app financial pipelines that sync your accounting software, CRMs, and payment gateways in real time.
+                <p class="text-zinc-400 leading-relaxed text-base">
+                    Manual ledger entries, invoice tracking, and payment reconciliations cost modern companies hundreds of lost hours every quarter. We design automated financial pipelines that sync your accounting software, CRMs, and payment gateways in real time.
                 </p>
             </div>
 
             <!-- Video & Key Benefits Grid -->
             <div class="grid lg:grid-cols-12 gap-8 items-center">
             
-                <!-- Video Player Container (YouTube Embed) -->
-                <div class="lg:col-span-7 relative bg-slate-950 border border-slate-800 rounded-2xl overflow-hidden shadow-xl aspect-video">
+                <!-- Video Player Container -->
+                <div class="lg:col-span-7 relative bg-black border border-zinc-800 rounded-2xl overflow-hidden shadow-2xl aspect-video group">
                     <iframe 
                         class="w-full h-full"
                         src="https://www.youtube.com/embed/kISC7403tVY" 
@@ -110,30 +110,31 @@
                         allowfullscreen>
                     </iframe>
                 </div>
+
                 <!-- Benefits List -->
                 <div class="lg:col-span-5 space-y-6">
                     <h3 class="text-xl font-bold text-white">What You Gain</h3>
                     
-                    <ul class="space-y-4 text-sm text-slate-300">
+                    <ul class="space-y-4 text-sm text-zinc-300">
                         <li class="flex items-start gap-3">
-                            <span class="text-blue-400 font-bold">✓</span>
+                            <span class="text-cyan-400 font-bold text-base">✓</span>
                             <div>
                                 <strong class="text-white block">Instant Reconciliation</strong>
-                                Automatically cross-reference payments received across payment gateways into your ledgers without human intervention.
+                                Automatically cross-reference payments received across gateways into your ledgers without human intervention.
                             </div>
                         </li>
                         <li class="flex items-start gap-3">
-                            <span class="text-blue-400 font-bold">✓</span>
+                            <span class="text-cyan-400 font-bold text-base">✓</span>
                             <div>
                                 <strong class="text-white block">Automated Invoicing & Reminders</strong>
-                                Trigger instant invoice generation on deal signatures and schedule multi-channel payment follow-ups automatically.
+                                Trigger instant invoice generation on deal signatures and schedule multi-channel payment follow-ups.
                             </div>
                         </li>
                         <li class="flex items-start gap-3">
-                            <span class="text-blue-400 font-bold">✓</span>
+                            <span class="text-cyan-400 font-bold text-base">✓</span>
                             <div>
                                 <strong class="text-white block">Zero Administrative Error</strong>
-                                Standardize data parsing across receipts, contracts, and software silos with 100% computational precision.
+                                Standardize data parsing across receipts, contracts, and software silos with computational precision.
                             </div>
                         </li>
                     </ul>
@@ -142,23 +143,23 @@
             </div>
 
             <!-- Pipeline Steps -->
-            <div class="border-t border-slate-800/80 pt-8 space-y-6">
+            <div class="border-t border-zinc-800/80 pt-8 space-y-6">
                 <h3 class="text-lg font-bold text-white">How The Pipeline Works</h3>
                 <div class="grid sm:grid-cols-3 gap-6">
-                    <div class="bg-slate-950/60 p-5 rounded-xl border border-slate-800/60">
-                        <div class="text-xs font-semibold text-blue-400 mb-1">STEP 01</div>
+                    <div class="bg-black/60 p-5 rounded-xl border border-zinc-800/80">
+                        <div class="text-xs font-semibold text-cyan-400 mb-1">STEP 01</div>
                         <h4 class="font-bold text-white mb-2">Data Capture</h4>
-                        <p class="text-xs text-slate-400 leading-relaxed">Invoices, CRM deals, or payment events trigger Webhooks instantly upon status changes.</p>
+                        <p class="text-xs text-zinc-400 leading-relaxed">Invoices, CRM deals, or payment events trigger Webhooks instantly upon status changes.</p>
                     </div>
-                    <div class="bg-slate-950/60 p-5 rounded-xl border border-slate-800/60">
-                        <div class="text-xs font-semibold text-blue-400 mb-1">STEP 02</div>
+                    <div class="bg-black/60 p-5 rounded-xl border border-zinc-800/80">
+                        <div class="text-xs font-semibold text-cyan-400 mb-1">STEP 02</div>
                         <h4 class="font-bold text-white mb-2">Automated Processing</h4>
-                        <p class="text-xs text-slate-400 leading-relaxed">Data is validated, structured, and routed via secure automated cloud workflows.</p>
+                        <p class="text-xs text-zinc-400 leading-relaxed">Data is validated, structured, and routed via secure automated cloud workflows.</p>
                     </div>
-                    <div class="bg-slate-950/60 p-5 rounded-xl border border-slate-800/60">
-                        <div class="text-xs font-semibold text-blue-400 mb-1">STEP 03</div>
+                    <div class="bg-black/60 p-5 rounded-xl border border-zinc-800/80">
+                        <div class="text-xs font-semibold text-cyan-400 mb-1">STEP 03</div>
                         <h4 class="font-bold text-white mb-2">Ledger Sync</h4>
-                        <p class="text-xs text-slate-400 leading-relaxed">Books update automatically, updating financial dashboards and notifying key team members.</p>
+                        <p class="text-xs text-zinc-400 leading-relaxed">Books update automatically, updating financial dashboards and notifying key team members.</p>
                     </div>
                 </div>
             </div>
@@ -167,16 +168,16 @@
     </section>
 
     <!-- Service #2: Digital Marketing Automation -->
-    <section id="marketing-automation" class="max-w-6xl mx-auto px-6 py-12">
-        <div class="bg-slate-900/50 border border-slate-800 rounded-3xl p-8 sm:p-12 space-y-12 shadow-2xl">
+    <section id="marketing-automation" class="max-w-6xl mx-auto px-6 py-10">
+        <div class="bg-zinc-900/40 backdrop-blur-xl border border-zinc-800/80 hover:border-blue-500/40 rounded-3xl p-8 sm:p-12 space-y-12 shadow-2xl transition duration-300">
             
             <!-- Section Header -->
             <div class="max-w-3xl space-y-3">
-                <span class="px-3 py-1 bg-purple-500/10 text-purple-400 border border-purple-500/20 rounded-full text-xs font-semibold uppercase tracking-wider">
-                    Growth Engine
+                <span class="px-3 py-1 bg-blue-500/10 text-blue-400 border border-blue-500/20 rounded-full text-xs font-semibold uppercase tracking-wider">
+                    GROWTH ENGINE
                 </span>
                 <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Digital Marketing Automation</h2>
-                <p class="text-slate-400 leading-relaxed text-base">
+                <p class="text-zinc-400 leading-relaxed text-base">
                     Inconsistent posting and delayed lead follow-ups cost brands prospective clients every day. We build multi-channel distribution engines that automatically schedule content across social platforms and instantly route incoming leads straight to your CRM.
                 </p>
             </div>
@@ -184,8 +185,8 @@
             <!-- Video & Key Benefits Grid -->
             <div class="grid lg:grid-cols-12 gap-8 items-center">
                 
-                <!-- Video Player Placeholder Container -->
-                <div class="lg:col-span-7 relative bg-slate-950 border border-slate-800 rounded-2xl overflow-hidden shadow-xl aspect-video">
+                <!-- Video Player Container -->
+                <div class="lg:col-span-7 relative bg-black border border-zinc-800 rounded-2xl overflow-hidden shadow-2xl aspect-video">
                     <iframe 
                         class="w-full h-full"
                         src="https://www.youtube.com/embed/pf0xsnybmcE" 
@@ -201,23 +202,23 @@
                 <div class="lg:col-span-5 space-y-6">
                     <h3 class="text-xl font-bold text-white">What You Gain</h3>
                     
-                    <ul class="space-y-4 text-sm text-slate-300">
+                    <ul class="space-y-4 text-sm text-zinc-300">
                         <li class="flex items-start gap-3">
-                            <span class="text-purple-400 font-bold">✓</span>
+                            <span class="text-blue-400 font-bold text-base">✓</span>
                             <div>
                                 <strong class="text-white block">Multi-Platform Auto-Scheduling</strong>
-                                Schedule and deploy video and graphics across LinkedIn, Instagram, X, and YouTube simultaneously without manual posting.
+                                Schedule and deploy content across LinkedIn, Instagram, X, and YouTube simultaneously without manual posting.
                             </div>
                         </li>
                         <li class="flex items-start gap-3">
-                            <span class="text-purple-400 font-bold">✓</span>
+                            <span class="text-blue-400 font-bold text-base">✓</span>
                             <div>
                                 <strong class="text-white block">Instant Lead Routing & Alerting</strong>
                                 Instantly capture incoming inquiries, parse prospect details, and push high-intent leads straight to sales or your inbox.
                             </div>
                         </li>
                         <li class="flex items-start gap-3">
-                            <span class="text-purple-400 font-bold">✓</span>
+                            <span class="text-blue-400 font-bold text-base">✓</span>
                             <div>
                                 <strong class="text-white block">Consistent Brand Presence</strong>
                                 Maintain an active online footprint and structured content calendar with 100% operational consistency.
@@ -229,23 +230,23 @@
             </div>
 
             <!-- Pipeline Steps -->
-            <div class="border-t border-slate-800/80 pt-8 space-y-6">
+            <div class="border-t border-zinc-800/80 pt-8 space-y-6">
                 <h3 class="text-lg font-bold text-white">How The Engine Works</h3>
                 <div class="grid sm:grid-cols-3 gap-6">
-                    <div class="bg-slate-950/60 p-5 rounded-xl border border-slate-800/60">
-                        <div class="text-xs font-semibold text-purple-400 mb-1">STEP 01</div>
+                    <div class="bg-black/60 p-5 rounded-xl border border-zinc-800/80">
+                        <div class="text-xs font-semibold text-blue-400 mb-1">STEP 01</div>
                         <h4 class="font-bold text-white mb-2">Content Orchestration</h4>
-                        <p class="text-xs text-slate-400 leading-relaxed">Assets and copy are staged into automated publishing queues via unified scheduling workflows.</p>
+                        <p class="text-xs text-zinc-400 leading-relaxed">Assets and copy are staged into automated publishing queues via unified scheduling workflows.</p>
                     </div>
-                    <div class="bg-slate-950/60 p-5 rounded-xl border border-slate-800/60">
-                        <div class="text-xs font-semibold text-purple-400 mb-1">STEP 02</div>
+                    <div class="bg-black/60 p-5 rounded-xl border border-zinc-800/80">
+                        <div class="text-xs font-semibold text-blue-400 mb-1">STEP 02</div>
                         <h4 class="font-bold text-white mb-2">Automated Syndication</h4>
-                        <p class="text-xs text-slate-400 leading-relaxed">Workflows publish content natively to target social networks at optimal engagement windows.</p>
+                        <p class="text-xs text-zinc-400 leading-relaxed">Workflows publish content natively to target social networks at optimal engagement windows.</p>
                     </div>
-                    <div class="bg-slate-950/60 p-5 rounded-xl border border-slate-800/60">
-                        <div class="text-xs font-semibold text-purple-400 mb-1">STEP 03</div>
+                    <div class="bg-black/60 p-5 rounded-xl border border-zinc-800/80">
+                        <div class="text-xs font-semibold text-blue-400 mb-1">STEP 03</div>
                         <h4 class="font-bold text-white mb-2">Lead Capture & Notification</h4>
-                        <p class="text-xs text-slate-400 leading-relaxed">Inbound comments and forms trigger instant webhook actions, notifying your team in real time.</p>
+                        <p class="text-xs text-zinc-400 leading-relaxed">Inbound comments and forms trigger instant webhook actions, notifying your team in real time.</p>
                     </div>
                 </div>
             </div>
@@ -254,16 +255,16 @@
     </section>
 
     <!-- Service #3: Automated Onboarding -->
-    <section id="automated-onboarding" class="max-w-6xl mx-auto px-6 py-12">
-        <div class="bg-slate-900/50 border border-slate-800 rounded-3xl p-8 sm:p-12 space-y-12 shadow-2xl">
+    <section id="automated-onboarding" class="max-w-6xl mx-auto px-6 py-10">
+        <div class="bg-zinc-900/40 backdrop-blur-xl border border-zinc-800/80 hover:border-cyan-500/40 rounded-3xl p-8 sm:p-12 space-y-12 shadow-2xl transition duration-300">
             
             <!-- Section Header -->
             <div class="max-w-3xl space-y-3">
-                <span class="px-3 py-1 bg-indigo-500/10 text-indigo-400 border border-indigo-500/20 rounded-full text-xs font-semibold uppercase tracking-wider">
-                    Client & Talent Scale
+                <span class="px-3 py-1 bg-cyan-500/10 text-cyan-400 border border-cyan-500/20 rounded-full text-xs font-semibold uppercase tracking-wider">
+                    CLIENT & TALENT SCALE
                 </span>
                 <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Automated Onboarding</h2>
-                <p class="text-slate-400 leading-relaxed text-base">
+                <p class="text-zinc-400 leading-relaxed text-base">
                     Streamline client and talent acquisition with frictionless, automated workflows that instantly generate legal contracts, collect signatures, and handle end-to-end system provisioning.
                 </p>
             </div>
@@ -271,8 +272,8 @@
             <!-- Video & Key Benefits Grid -->
             <div class="grid lg:grid-cols-12 gap-8 items-center">
                 
-                <!-- Video Player Placeholder Container -->
-                <div class="lg:col-span-7 relative bg-slate-950 border border-slate-800 rounded-2xl overflow-hidden shadow-xl aspect-video">
+                <!-- Video Player Container -->
+                <div class="lg:col-span-7 relative bg-black border border-zinc-800 rounded-2xl overflow-hidden shadow-2xl aspect-video">
                     <iframe 
                         class="w-full h-full"
                         src="https://www.youtube.com/embed/IZcRzSjM4N0" 
@@ -288,23 +289,23 @@
                 <div class="lg:col-span-5 space-y-6">
                     <h3 class="text-xl font-bold text-white">What You Gain</h3>
                     
-                    <ul class="space-y-4 text-sm text-slate-300">
+                    <ul class="space-y-4 text-sm text-zinc-300">
                         <li class="flex items-start gap-3">
-                            <span class="text-indigo-400 font-bold">✓</span>
+                            <span class="text-cyan-400 font-bold text-base">✓</span>
                             <div>
                                 <strong class="text-white block">Instant Contract Generation</strong>
-                                Automatically dynamically populate NDAs, service agreements, and legal contracts straight from form responses or CRM triggers.
+                                Dynamically populate NDAs, service agreements, and legal contracts straight from form responses or CRM triggers.
                             </div>
                         </li>
                         <li class="flex items-start gap-3">
-                            <span class="text-indigo-400 font-bold">✓</span>
+                            <span class="text-cyan-400 font-bold text-base">✓</span>
                             <div>
                                 <strong class="text-white block">Zero-Touch System Provisioning</strong>
-                                Instantly create workspace accounts, grant platform permissions, and send automated welcome kits upon contract signature.
+                                Instantly create workspace accounts, grant permissions, and send automated welcome kits upon signature.
                             </div>
                         </li>
                         <li class="flex items-start gap-3">
-                            <span class="text-indigo-400 font-bold">✓</span>
+                            <span class="text-cyan-400 font-bold text-base">✓</span>
                             <div>
                                 <strong class="text-white block">Frictionless First Impressions</strong>
                                 Deliver a lightning-fast onboarding experience that builds immediate trust with new clients and team members.
@@ -316,23 +317,23 @@
             </div>
 
             <!-- Pipeline Steps -->
-            <div class="border-t border-slate-800/80 pt-8 space-y-6">
+            <div class="border-t border-zinc-800/80 pt-8 space-y-6">
                 <h3 class="text-lg font-bold text-white">How The Pipeline Works</h3>
                 <div class="grid sm:grid-cols-3 gap-6">
-                    <div class="bg-slate-950/60 p-5 rounded-xl border border-slate-800/60">
-                        <div class="text-xs font-semibold text-indigo-400 mb-1">STEP 01</div>
+                    <div class="bg-black/60 p-5 rounded-xl border border-zinc-800/80">
+                        <div class="text-xs font-semibold text-cyan-400 mb-1">STEP 01</div>
                         <h4 class="font-bold text-white mb-2">Trigger & Data Fetch</h4>
-                        <p class="text-xs text-slate-400 leading-relaxed">A deal close or new hire submission triggers the workflow, gathering client and contract data instantly.</p>
+                        <p class="text-xs text-zinc-400 leading-relaxed">A deal close or submission triggers the workflow, gathering client and contract data instantly.</p>
                     </div>
-                    <div class="bg-slate-950/60 p-5 rounded-xl border border-slate-800/60">
-                        <div class="text-xs font-semibold text-indigo-400 mb-1">STEP 02</div>
+                    <div class="bg-black/60 p-5 rounded-xl border border-zinc-800/80">
+                        <div class="text-xs font-semibold text-cyan-400 mb-1">STEP 02</div>
                         <h4 class="font-bold text-white mb-2">Legal & Signature Routing</h4>
-                        <p class="text-xs text-slate-400 leading-relaxed">Custom agreement links are generated and emailed via e-signature integrations automatically.</p>
+                        <p class="text-xs text-zinc-400 leading-relaxed">Custom agreement links are generated and emailed via e-signature integrations automatically.</p>
                     </div>
-                    <div class="bg-slate-950/60 p-5 rounded-xl border border-slate-800/60">
-                        <div class="text-xs font-semibold text-indigo-400 mb-1">STEP 03</div>
+                    <div class="bg-black/60 p-5 rounded-xl border border-zinc-800/80">
+                        <div class="text-xs font-semibold text-cyan-400 mb-1">STEP 03</div>
                         <h4 class="font-bold text-white mb-2">Automated Provisioning</h4>
-                        <p class="text-xs text-slate-400 leading-relaxed">On execution, workspace invites, folders, and payment channels are provisioned in seconds.</p>
+                        <p class="text-xs text-zinc-400 leading-relaxed">On execution, workspace invites, folders, and payment channels are provisioned in seconds.</p>
                     </div>
                 </div>
             </div>
@@ -341,16 +342,16 @@
     </section>
 
     <!-- Service #4: Revenue & RevOps -->
-    <section id="revops" class="max-w-6xl mx-auto px-6 py-12">
-        <div class="bg-slate-900/50 border border-slate-800 rounded-3xl p-8 sm:p-12 space-y-12 shadow-2xl">
+    <section id="revops" class="max-w-6xl mx-auto px-6 py-10 mb-12">
+        <div class="bg-zinc-900/40 backdrop-blur-xl border border-zinc-800/80 hover:border-blue-500/40 rounded-3xl p-8 sm:p-12 space-y-12 shadow-2xl transition duration-300">
             
             <!-- Section Header -->
             <div class="max-w-3xl space-y-3">
-                <span class="px-3 py-1 bg-sky-500/10 text-sky-400 border border-sky-500/20 rounded-full text-xs font-semibold uppercase tracking-wider">
-                    Sales Velocity
+                <span class="px-3 py-1 bg-blue-500/10 text-blue-400 border border-blue-500/20 rounded-full text-xs font-semibold uppercase tracking-wider">
+                    SALES VELOCITY
                 </span>
                 <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Revenue & RevOps</h2>
-                <p class="text-slate-400 leading-relaxed text-base">
+                <p class="text-zinc-400 leading-relaxed text-base">
                     Lead enrichment, automated CRM pipelines, and post-meeting AI synthesis that keep sales teams focused on closing deals instead of updating spreadsheets.
                 </p>
             </div>
@@ -358,8 +359,8 @@
             <!-- Video & Key Benefits Grid -->
             <div class="grid lg:grid-cols-12 gap-8 items-center">
                 
-                <!-- Video Player Placeholder Container -->
-                <div class="lg:col-span-7 relative bg-slate-950 border border-slate-800 rounded-2xl overflow-hidden shadow-xl aspect-video">
+                <!-- Video Player Container -->
+                <div class="lg:col-span-7 relative bg-black border border-zinc-800 rounded-2xl overflow-hidden shadow-2xl aspect-video">
                     <iframe 
                         class="w-full h-full"
                         src="https://www.youtube.com/embed/EnTqQ-RvRhA" 
@@ -375,23 +376,23 @@
                 <div class="lg:col-span-5 space-y-6">
                     <h3 class="text-xl font-bold text-white">What You Gain</h3>
                     
-                    <ul class="space-y-4 text-sm text-slate-300">
+                    <ul class="space-y-4 text-sm text-zinc-300">
                         <li class="flex items-start gap-3">
-                            <span class="text-sky-400 font-bold">✓</span>
+                            <span class="text-blue-400 font-bold text-base">✓</span>
                             <div>
                                 <strong class="text-white block">Automated Lead Enrichment</strong>
                                 Instantly pull company size, tech stack, and decision-maker contact details into your CRM before reps make first contact.
                             </div>
                         </li>
                         <li class="flex items-start gap-3">
-                            <span class="text-sky-400 font-bold">✓</span>
+                            <span class="text-blue-400 font-bold text-base">✓</span>
                             <div>
                                 <strong class="text-white block">Post-Meeting AI Synthesis</strong>
                                 Automatically summarize sales calls, extract key action items, and update CRM deal stages in real time.
                             </div>
                         </li>
                         <li class="flex items-start gap-3">
-                            <span class="text-sky-400 font-bold">✓</span>
+                            <span class="text-blue-400 font-bold text-base">✓</span>
                             <div>
                                 <strong class="text-white block">Silo-Free CRM Pipelines</strong>
                                 Synchronize inbound leads across email, web forms, and calendar tools without losing prospect data.
@@ -403,23 +404,23 @@
             </div>
 
             <!-- Pipeline Steps -->
-            <div class="border-t border-slate-800/80 pt-8 space-y-6">
+            <div class="border-t border-zinc-800/80 pt-8 space-y-6">
                 <h3 class="text-lg font-bold text-white">How The Pipeline Works</h3>
                 <div class="grid sm:grid-cols-3 gap-6">
-                    <div class="bg-slate-950/60 p-5 rounded-xl border border-slate-800/60">
-                        <div class="text-xs font-semibold text-sky-400 mb-1">STEP 01</div>
+                    <div class="bg-black/60 p-5 rounded-xl border border-zinc-800/80">
+                        <div class="text-xs font-semibold text-blue-400 mb-1">STEP 01</div>
                         <h4 class="font-bold text-white mb-2">Lead Capture & Parsing</h4>
-                        <p class="text-xs text-slate-400 leading-relaxed">Inbound prospects trigger automated data enrichment to qualify intent and route to the right rep.</p>
+                        <p class="text-xs text-zinc-400 leading-relaxed">Inbound prospects trigger automated data enrichment to qualify intent and route to the right rep.</p>
                     </div>
-                    <div class="bg-slate-950/60 p-5 rounded-xl border border-slate-800/60">
-                        <div class="text-xs font-semibold text-sky-400 mb-1">STEP 02</div>
+                    <div class="bg-black/60 p-5 rounded-xl border border-zinc-800/80">
+                        <div class="text-xs font-semibold text-blue-400 mb-1">STEP 02</div>
                         <h4 class="font-bold text-white mb-2">AI Call Processing</h4>
-                        <p class="text-xs text-slate-400 leading-relaxed">Recorded call audio is processed through custom AI models to transcribe and pull relevant deal insights.</p>
+                        <p class="text-xs text-zinc-400 leading-relaxed">Recorded call audio is processed through custom AI models to transcribe and pull relevant deal insights.</p>
                     </div>
-                    <div class="bg-slate-950/60 p-5 rounded-xl border border-slate-800/60">
-                        <div class="text-xs font-semibold text-sky-400 mb-1">STEP 03</div>
+                    <div class="bg-black/60 p-5 rounded-xl border border-zinc-800/80">
+                        <div class="text-xs font-semibold text-blue-400 mb-1">STEP 03</div>
                         <h4 class="font-bold text-white mb-2">CRM Sync & Action Items</h4>
-                        <p class="text-xs text-slate-400 leading-relaxed">Notes, deal stage updates, and follow-up tasks are automatically logged straight to your sales pipeline.</p>
+                        <p class="text-xs text-zinc-400 leading-relaxed">Notes, deal stage updates, and follow-up tasks are automatically logged straight to your sales pipeline.</p>
                     </div>
                 </div>
             </div>
@@ -428,27 +429,26 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-slate-950 border-t border-slate-900 text-slate-400 py-16 px-6 md:px-12">
+    <footer class="bg-black border-t border-zinc-900 text-zinc-400 py-16 px-6 md:px-12">
         <div class="max-w-7xl mx-auto">
-            <!-- Top Section: Grid Layout -->
+            <!-- Top Grid Layout -->
             <div class="grid grid-cols-1 md:grid-cols-3 gap-12 pb-12">
                 
                 <!-- Brand Column -->
                 <div class="flex flex-col gap-4">
-                    <!-- Pulsing Soundwave Logo & Brand Name -->
                     <a href="index.html" class="flex items-center gap-3 group">
                         <div class="flex items-end gap-1 h-6 w-8 justify-center">
-                            <span class="w-1 bg-blue-500 rounded-full animate-pulse" style="animation-duration: 0.8s; height: 40%;"></span>
-                            <span class="w-1 bg-indigo-500 rounded-full animate-pulse" style="animation-duration: 1.1s; height: 100%;"></span>
-                            <span class="w-1 bg-purple-500 rounded-full animate-pulse" style="animation-duration: 0.9s; height: 60%;"></span>
+                            <span class="w-1 bg-cyan-400 rounded-full animate-pulse" style="animation-duration: 0.8s; height: 40%;"></span>
+                            <span class="w-1 bg-blue-500 rounded-full animate-pulse" style="animation-duration: 1.1s; height: 100%;"></span>
+                            <span class="w-1 bg-cyan-300 rounded-full animate-pulse" style="animation-duration: 0.9s; height: 60%;"></span>
                             <span class="w-1 bg-blue-400 rounded-full animate-pulse" style="animation-duration: 1.3s; height: 80%;"></span>
-                            <span class="w-1 bg-indigo-400 rounded-full animate-pulse" style="animation-duration: 0.7s; height: 30%;"></span>
+                            <span class="w-1 bg-indigo-500 rounded-full animate-pulse" style="animation-duration: 0.7s; height: 30%;"></span>
                         </div>
-                        <span class="text-xl font-bold text-blue-400 tracking-tight">
+                        <span class="text-xl font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent tracking-tight">
                             FOUNDERS ECHO
                         </span>
                     </a>
-                    <p class="text-sm text-slate-500 max-w-xs leading-relaxed mt-2">
+                    <p class="text-sm text-zinc-500 max-w-xs leading-relaxed mt-2">
                         Automating brand authority, seamless digital operations, and strategic workflow optimization.
                     </p>
                 </div>
@@ -457,10 +457,10 @@
                 <div>
                     <h4 class="text-sm font-semibold text-white uppercase tracking-wider mb-6">Quick Links</h4>
                     <ul class="space-y-3 text-sm">
-                        <li><a href="index.html" class="hover:text-blue-400 transition-colors">Home</a></li>
-                        <li><a href="services.html" class="hover:text-blue-400 transition-colors">Services</a></li>
-                        <li><a href="about.html" class="hover:text-blue-400 transition-colors">About Us</a></li>
-                        <li><a href="contact.html" class="hover:text-blue-400 transition-colors">Book a Call</a></li>
+                        <li><a href="index.html" class="hover:text-cyan-400 transition-colors">Home</a></li>
+                        <li><a href="services.html" class="hover:text-cyan-400 transition-colors">Services</a></li>
+                        <li><a href="about.html" class="hover:text-cyan-400 transition-colors">About Us</a></li>
+                        <li><a href="contact.html" class="hover:text-cyan-400 transition-colors">Book a Call</a></li>
                     </ul>
                 </div>
 
@@ -468,20 +468,17 @@
                 <div>
                     <h4 class="text-sm font-semibold text-white uppercase tracking-wider mb-6">Contact</h4>
                     <ul class="space-y-4 text-sm">
-                        <!-- Email -->
                         <li class="flex items-center gap-3">
-                            <i data-lucide="mail" class="w-4 h-4 text-slate-500"></i>
-                            <a href="mailto:info@foundersecho.com" class="hover:text-blue-400 transition-colors">info@foundersecho.com</a>
+                            <i data-lucide="mail" class="w-4 h-4 text-zinc-500"></i>
+                            <a href="mailto:info@foundersecho.com" class="hover:text-cyan-400 transition-colors">info@foundersecho.com</a>
                         </li>
-                        <!-- Phone -->
                         <li class="flex items-center gap-3">
-                            <i data-lucide="phone" class="w-4 h-4 text-slate-500"></i>
-                            <a href="tel:+27764367859" class="hover:text-blue-400 transition-colors">+27 76 436 7859</a>
+                            <i data-lucide="phone" class="w-4 h-4 text-zinc-500"></i>
+                            <a href="tel:+27764367859" class="hover:text-cyan-400 transition-colors">+27 76 436 7859</a>
                         </li>
-                        <!-- Address -->
                         <li class="flex items-start gap-3">
-                            <i data-lucide="map-pin" class="w-4 h-4 text-slate-500 mt-0.5"></i>
-                            <span class="leading-relaxed text-slate-400">
+                            <i data-lucide="map-pin" class="w-4 h-4 text-zinc-500 mt-0.5"></i>
+                            <span class="leading-relaxed text-zinc-400">
                                 Somerset West, Cape Town, South Africa
                             </span>
                         </li>
@@ -491,14 +488,14 @@
             </div>
 
             <!-- Divider Line -->
-            <div class="border-t border-slate-900/80 my-8"></div>
+            <div class="border-t border-zinc-900 my-8"></div>
 
             <!-- Bottom Copyright -->
-            <div class="flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-600">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-zinc-600">
                 <p>&copy; 2026 Founders Echo. All rights reserved.</p>
                 <div class="flex gap-6">
-                    <a href="privacy.html" class="hover:text-slate-400 transition-colors">Privacy Policy</a>
-                    <a href="terms.html" class="hover:text-slate-400 transition-colors">Terms of Service</a>
+                    <a href="privacy.html" class="hover:text-zinc-400 transition-colors">Privacy Policy</a>
+                    <a href="terms.html" class="hover:text-zinc-400 transition-colors">Terms of Service</a>
                 </div>
             </div>
         </div>
