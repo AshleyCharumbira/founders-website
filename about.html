@@ -177,23 +177,78 @@
         </section>
     </main>
 
-    <!-- Footer -->
-    <footer class="bg-black border-t border-slate-900 py-12">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
-            <div class="flex items-center space-x-3">
-                <img src="New_logo.png" alt="FoundersEcho Logo" class="h-8 w-8 object-contain mix-blend-screen" onerror="this.style.display='none'">
-                <span class="text-lg font-bold text-white">FoundersEcho</span>
+<!-- Footer -->
+<footer class="bg-black/80 backdrop-blur-md border-t border-white/10 text-slate-400 py-16 px-6 md:px-12">
+    <div class="max-w-7xl mx-auto">
+        <!-- Top Section: Grid Layout -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12 pb-12">
+            
+            <!-- Brand Column -->
+            <div class="flex flex-col gap-4">
+                <!-- Matching Image Logo with Pulsing Glow & Brand Name -->
+                <a href="#" class="flex items-center gap-3 group">
+                    <img src="New_logo.png" 
+                         alt="Founders Echo Logo" 
+                         class="h-12 w-12 rounded-full border border-cyan-400/80 animate-glow-pulse object-cover mix-blend-screen">
+                    <span class="text-xl font-bold text-cyan-400 group-hover:text-cyan-300 transition-colors duration-300 tracking-tight">
+                        FOUNDERS ECHO
+                    </span>
+                </a>
+                <p class="text-sm text-slate-500 max-w-xs leading-relaxed mt-2">
+                    Automating brand authority, seamless digital operations, and strategic workflow optimization.
+                </p>
             </div>
-            <p class="text-slate-500 text-sm">
-                &copy; 2026 FoundersEcho. All rights reserved.
-            </p>
-            <div class="flex space-x-6 text-sm text-slate-400">
-                <a href="index.html" class="hover:text-cyan-400 transition-colors">Home</a>
-                <a href="index.html#services" class="hover:text-cyan-400 transition-colors">Services</a>
-                <a href="index.html#contact" class="hover:text-cyan-400 transition-colors">Contact</a>
+
+            <!-- Quick Links Column -->
+            <div>
+                <h4 class="text-sm font-semibold text-white uppercase tracking-wider mb-6">Quick Links</h4>
+                <ul class="space-y-3 text-sm">
+                    <li><a href="#home" class="hover:text-cyan-400 transition-colors">Home</a></li>
+                    <li><a href="#services" class="hover:text-cyan-400 transition-colors">Services</a></li>
+                    <li><a href="#about" class="hover:text-cyan-400 transition-colors">About Us</a></li>
+                    <li><a href="#contact" class="hover:text-cyan-400 transition-colors">Book a Call</a></li>
+                </ul>
+            </div>
+
+             <!-- Contact Column -->
+            <div>
+                <h4 class="text-sm font-semibold text-white uppercase tracking-wider mb-6">Contact</h4>
+                <ul class="space-y-4 text-sm">
+                    <!-- Email -->
+                    <li class="flex items-center gap-3">
+                        <i data-lucide="mail" class="w-4 h-4 text-slate-500"></i>
+                        <a href="mailto:hello@foundersecho.com" class="hover:text-cyan-400 transition-colors">info@foundersecho.com</a>
+                    </li>
+                    <!-- Phone -->
+                    <li class="flex items-center gap-3">
+                        <i data-lucide="phone" class="w-4 h-4 text-slate-500"></i>
+                        <a href="tel:+27211234567" class="hover:text-cyan-400 transition-colors">+27 76 436 7859</a>
+                    </li>
+                    <!-- Address -->
+                    <li class="flex items-start gap-3">
+                        <i data-lucide="map-pin" class="w-4 h-4 text-slate-500 mt-0.5"></i>
+                        <span class="leading-relaxed text-slate-400">
+                            Somerset West, Cape Town, South Africa
+                        </span>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+
+        <!-- Divider Line -->
+        <div class="border-t border-white/10 my-8"></div>
+
+        <!-- Bottom Copyright -->
+        <div class="flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-600">
+            <p>&copy; 2026 Founders Echo. All rights reserved.</p>
+            <div class="flex gap-6">
+                <a href="privacy.html" class="hover:text-slate-400 transition-colors">Privacy Policy</a>
+                <a href="terms.html" class="hover:text-slate-400 transition-colors">Terms of Service</a>
             </div>
         </div>
-    </footer>
+    </div>
+</footer>
 
     <!-- Scripts -->
     <script>
