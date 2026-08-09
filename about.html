@@ -1,93 +1,76 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=1">
-    <title>Founders Echo | Business Process Automation</title>
-    <meta name="google-site-verification" content="google8089a1d535fe19cc" />
-
+    <title>About Us | FoundersEcho</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <style>
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        .glow-effect {
+            box-shadow: 0 0 25px rgba(6, 182, 212, 0.15);
+        }
+        .glow-effect-hover:hover {
+            box-shadow: 0 0 35px rgba(6, 182, 212, 0.3);
         }
         
-        .animate-fade-up {
-            animation: fadeInUp 2.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-            animation-delay: 0.2s; 
-            opacity: 0;
-        }
-
-        /* Animated Pulsing Glow for Logo */
-        @keyframes pulseGlow {
+        /* Logo pulse animation matching Index page */
+        @keyframes logo-pulse {
             0%, 100% {
-                box-shadow: 0 0 8px rgba(56, 189, 248, 0.3);
-                border-color: rgba(56, 189, 248, 0.5);
+                transform: scale(1);
+                filter: drop-shadow(0 0 2px rgba(6, 182, 212, 0.4));
             }
             50% {
-                box-shadow: 0 0 18px rgba(56, 189, 248, 0.8), 0 0 28px rgba(6, 182, 212, 0.4);
-                border-color: rgba(56, 189, 248, 1);
+                transform: scale(1.05);
+                filter: drop-shadow(0 0 10px rgba(6, 182, 212, 0.8));
             }
         }
-
-        .animate-glow-pulse {
-            animation: pulseGlow 2s ease-in-out infinite;
-        }
-
-        /* Prevent Lucide layout compression in Tailwind v4 runtimes */
-        svg.lucide {
-            display: inline-block !important;
-            vertical-align: middle;
+        .animate-logo-pulse {
+            animation: logo-pulse 3s ease-in-out infinite;
         }
     </style>
 </head>
-<body class="bg-black text-slate-100 font-sans antialiased selection:bg-cyan-500/30 selection:text-cyan-200">
+<body class="bg-black text-slate-100 font-sans antialiased selection:bg-cyan-500 selection:text-black min-h-screen flex flex-col justify-between">
 
-<!-- Header matching global obsidian black styling -->
-<header class="sticky top-0 left-0 right-0 z-50 max-w-full bg-black/80 backdrop-blur-md border-b border-white/10 px-6 py-4 transition duration-200">
-    <div class="max-w-6xl mx-auto flex justify-between items-center relative">
+    <!-- Header / Navigation (Matches Index Page Layout & Pulsing Logo) -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-md border-b border-slate-800/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="index.html" class="flex items-center space-x-3 group">
+                <img src="New_logo.png" alt="FoundersEcho Logo" class="h-10 w-10 object-contain mix-blend-screen animate-logo-pulse" onerror="this.style.display='none'">
+                <span class="text-xl font-bold tracking-tight text-white group-hover:text-cyan-400 transition-colors">FoundersEcho</span>
+            </a>
 
-        <a href="index.html" class="flex items-center gap-3 group cursor-pointer no-underline z-10">
-            <!-- Image Logo with Thinner Border & Pulsing Glow -->
-            <img src="New_logo.png" 
-                 alt="Founders Echo Logo" 
-                 class="h-12 w-12 rounded-full border border-cyan-400/80 animate-glow-pulse object-cover mix-blend-screen">
-            
-            <!-- Static Premium Brand Name -->
-            <span class="text-xl font-bold text-cyan-400 group-hover:text-cyan-300 transition-colors duration-300 tracking-tight">
-                FOUNDERS ECHO
-            </span>
-        </a>
+            <!-- Desktop Navigation -->
+            <nav class="hidden md:flex items-center space-x-8">
+                <a href="index.html" class="text-sm font-medium text-slate-300 hover:text-cyan-400 transition-colors">Home</a>
+                <a href="index.html#services" class="text-sm font-medium text-slate-300 hover:text-cyan-400 transition-colors">Services</a>
+                <a href="about.html" class="text-sm font-medium text-cyan-400 transition-colors">About Us</a>
+                <a href="index.html#contact" class="text-sm font-medium text-slate-300 hover:text-cyan-400 transition-colors">Contact</a>
+            </nav>
 
-        <!-- Mobile Menu Toggle Button -->
-        <button id="mobile-menu-btn" class="md:hidden text-slate-400 hover:text-white p-2 focus:outline-none z-10 cursor-pointer" aria-label="Toggle Navigation">
-            <i data-lucide="menu" class="w-6 h-6"></i>
-        </button>
+            <div class="hidden md:flex items-center space-x-4">
+                <a href="index.html#contact" class="px-5 py-2.5 rounded-lg bg-cyan-500 hover:bg-cyan-400 text-black font-semibold text-sm transition-all duration-300 shadow-lg shadow-cyan-500/20 hover:shadow-cyan-500/40">
+                    Get Started
+                </a>
+            </div>
 
-        <!-- Navigation Links Container -->
-        <nav id="nav-menu" class="hidden absolute md:static top-full left-0 right-0 bg-black/95 md:bg-transparent border-b border-white/10 md:border-none p-6 md:p-0 flex-col md:flex-row md:flex items-center gap-6 md:gap-8 shadow-xl md:shadow-none transition-all duration-300">
-            <a href="index.html" class="text-sm font-semibold tracking-wider text-white transition duration-200 block py-1 md:py-0 hover:text-cyan-400">HOME</a>
-            <a href="about.html" class="text-sm font-semibold tracking-wider text-slate-400 hover:text-cyan-400 transition duration-200 block py-1 md:py-0">ABOUT US</a>
-            <a href="services.html" class="text-sm font-semibold tracking-wider text-slate-400 hover:text-cyan-400 transition duration-200 block py-1 md:py-0">SERVICES</a>
-            <a href="contact.html" class="text-sm font-semibold tracking-wider text-slate-400 hover:text-cyan-400 transition duration-200 block py-1 md:py-0">CONTACT US</a>
-        </nav>
+            <!-- Mobile Menu Toggle -->
+            <button id="menu-btn" class="md:hidden text-slate-300 hover:text-white p-2" aria-label="Toggle Navigation Menu">
+                <i data-lucide="menu" class="w-6 h-6 min-w-[24px] min-h-[24px]"></i>
+            </button>
+        </div>
 
-        <!-- Get Started CTA (Desktop Only) -->
-        <a href="index.html#contact" class="hidden md:inline-block bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white text-sm font-semibold px-5 py-2.5 rounded-xl transition shadow-lg shadow-cyan-950/50">
-            Get Started
-        </a>
-    </div>
-</header>
-
+        <!-- Mobile Navigation Menu -->
+        <div id="mobile-menu" class="hidden md:hidden border-b border-slate-800 bg-slate-950 px-4 pt-2 pb-6 space-y-3">
+            <a href="index.html" class="block text-base font-medium text-slate-300 hover:text-cyan-400 transition-colors py-2">Home</a>
+            <a href="index.html#services" class="block text-base font-medium text-slate-300 hover:text-cyan-400 transition-colors py-2">Services</a>
+            <a href="about.html" class="block text-base font-medium text-cyan-400 py-2">About Us</a>
+            <a href="index.html#contact" class="block text-base font-medium text-slate-300 hover:text-cyan-400 transition-colors py-2">Contact</a>
+            <a href="index.html#contact" class="block w-full text-center py-3 rounded-lg bg-cyan-500 text-black font-semibold text-sm">
+                Get Started
+            </a>
+        </div>
+    </header>
 
     <main class="pt-20 flex-grow">
         <!-- Hero / Intro Section -->
@@ -177,78 +160,26 @@
         </section>
     </main>
 
-<!-- Footer -->
-<footer class="bg-black/80 backdrop-blur-md border-t border-white/10 text-slate-400 py-16 px-6 md:px-12">
-    <div class="max-w-7xl mx-auto">
-        <!-- Top Section: Grid Layout -->
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-12 pb-12">
-            
-            <!-- Brand Column -->
-            <div class="flex flex-col gap-4">
-                <!-- Matching Image Logo with Pulsing Glow & Brand Name -->
-                <a href="#" class="flex items-center gap-3 group">
-                    <img src="New_logo.png" 
-                         alt="Founders Echo Logo" 
-                         class="h-12 w-12 rounded-full border border-cyan-400/80 animate-glow-pulse object-cover mix-blend-screen">
-                    <span class="text-xl font-bold text-cyan-400 group-hover:text-cyan-300 transition-colors duration-300 tracking-tight">
-                        FOUNDERS ECHO
-                    </span>
-                </a>
-                <p class="text-sm text-slate-500 max-w-xs leading-relaxed mt-2">
-                    Automating brand authority, seamless digital operations, and strategic workflow optimization.
+    <!-- Footer (Matches Index Page Design & Structure) -->
+    <footer class="bg-black border-t border-slate-900 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+                <div class="flex items-center space-x-3">
+                    <img src="New_logo.png" alt="FoundersEcho Logo" class="h-8 w-8 object-contain mix-blend-screen animate-logo-pulse" onerror="this.style.display='none'">
+                    <span class="text-lg font-bold text-white">FoundersEcho</span>
+                </div>
+                <p class="text-slate-500 text-sm">
+                    &copy; 2026 FoundersEcho. All rights reserved.
                 </p>
-            </div>
-
-            <!-- Quick Links Column -->
-            <div>
-                <h4 class="text-sm font-semibold text-white uppercase tracking-wider mb-6">Quick Links</h4>
-                <ul class="space-y-3 text-sm">
-                    <li><a href="#home" class="hover:text-cyan-400 transition-colors">Home</a></li>
-                    <li><a href="#services" class="hover:text-cyan-400 transition-colors">Services</a></li>
-                    <li><a href="#about" class="hover:text-cyan-400 transition-colors">About Us</a></li>
-                    <li><a href="#contact" class="hover:text-cyan-400 transition-colors">Book a Call</a></li>
-                </ul>
-            </div>
-
-             <!-- Contact Column -->
-            <div>
-                <h4 class="text-sm font-semibold text-white uppercase tracking-wider mb-6">Contact</h4>
-                <ul class="space-y-4 text-sm">
-                    <!-- Email -->
-                    <li class="flex items-center gap-3">
-                        <i data-lucide="mail" class="w-4 h-4 text-slate-500"></i>
-                        <a href="mailto:hello@foundersecho.com" class="hover:text-cyan-400 transition-colors">info@foundersecho.com</a>
-                    </li>
-                    <!-- Phone -->
-                    <li class="flex items-center gap-3">
-                        <i data-lucide="phone" class="w-4 h-4 text-slate-500"></i>
-                        <a href="tel:+27211234567" class="hover:text-cyan-400 transition-colors">+27 76 436 7859</a>
-                    </li>
-                    <!-- Address -->
-                    <li class="flex items-start gap-3">
-                        <i data-lucide="map-pin" class="w-4 h-4 text-slate-500 mt-0.5"></i>
-                        <span class="leading-relaxed text-slate-400">
-                            Somerset West, Cape Town, South Africa
-                        </span>
-                    </li>
-                </ul>
-            </div>
-
-        </div>
-
-        <!-- Divider Line -->
-        <div class="border-t border-white/10 my-8"></div>
-
-        <!-- Bottom Copyright -->
-        <div class="flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-600">
-            <p>&copy; 2026 Founders Echo. All rights reserved.</p>
-            <div class="flex gap-6">
-                <a href="privacy.html" class="hover:text-slate-400 transition-colors">Privacy Policy</a>
-                <a href="terms.html" class="hover:text-slate-400 transition-colors">Terms of Service</a>
+                <div class="flex space-x-6 text-sm text-slate-400">
+                    <a href="index.html" class="hover:text-cyan-400 transition-colors">Home</a>
+                    <a href="index.html#services" class="hover:text-cyan-400 transition-colors">Services</a>
+                    <a href="about.html" class="hover:text-cyan-400 transition-colors">About Us</a>
+                    <a href="index.html#contact" class="hover:text-cyan-400 transition-colors">Contact</a>
+                </div>
             </div>
         </div>
-    </div>
-</footer>
+    </footer>
 
     <!-- Scripts -->
     <script>
